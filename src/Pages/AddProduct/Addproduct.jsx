@@ -45,7 +45,7 @@ const AddProduct = () => {
 
 
     return (
-        <div className="bg-[url('https://i.ibb.co/LZhwJ1T/workplace-business-modern-male-accessories-laptop-black-background-1.jpg')]   h-[100vh] bg-cover bg-no-repeat   ">
+        <div className="lg:bg-[url('https://i.ibb.co/LZhwJ1T/workplace-business-modern-male-accessories-laptop-black-background-1.jpg')] min-h-fit lg:h-screen bg-cover bg-no-repeat   ">
             <Navbar></Navbar>
              <div className="hero h-[86vh]  bg-transparent ">
                 <div className="hero-content flex-col  w-full">

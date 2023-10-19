@@ -9,11 +9,11 @@
 
 const Banner = () => {
     return (
-        <div className="container mx-auto flex gap-5 items-center -mt-10">
-            <div className=" w-1/2 text-center">
-                <h3 className="text-5xl">this is the banner section </h3>
+        <div className="container mx-auto lg:flex gap-5 justify-center text-center items-center lg:-mt-10">
+            <div className=" lg:w-1/2 text-center">
+                <h3 className="md:text-5xl text-2xl font-semibold ">Discover Tomorrow's Tech Today At  <span className="text-bold text-[#FF8234]">GadgetGear</span>  Your Gadget Wonderland!</h3>
             </div>
-            <div className="w-1/2">
+            <div className="w-1/2 mx-auto lg:mx-0">
                 <img src="https://i.ibb.co/SNvh6rT/banner.jpg" alt="" />
             </div>
 

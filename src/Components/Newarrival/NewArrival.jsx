@@ -1,8 +1,8 @@
 const NewArrival = () => {
     return (
-        <div className="container mx-auto my-32">
+        <div className="container mx-auto my-32 p-4">
             <h3 className="text-4xl font-semibold text-center my-12 text-[#ff8234]">New Arrival</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-4 lg:gap-20">
             <div className="card card-compact  bg-base-100 border-2 hover:border-b-[#ff8234] transition duration-300 ease-in-out hover:scale-110">
                 <figure><img src="https://i.ibb.co/bQ8c0kY/mockup-free-ikg-P7-AQs2r4-unsplash.jpg" className="h-[390px]" alt="Shoes" /></figure>
                 <div className="card-body">
