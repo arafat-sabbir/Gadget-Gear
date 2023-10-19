@@ -4,7 +4,7 @@ import BrandDetail from "../BrandDetail/BrandDetail";
 const Brand = () => {
     const [brands, setBrands] = useState(null)
     useEffect(() => {
-        fetch('https://n-kilsngnip-arafat-sabbirs-projects.vercel.app/brand')
+        fetch('https://n-fs7xbfw8v-arafat-sabbirs-projects.vercel.app/brand')
             .then(res => res.json())
             .then(data => setBrands(data))
     }, [])

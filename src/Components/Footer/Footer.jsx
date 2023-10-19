@@ -1,36 +1,25 @@
-const Footer = () => {
-    return (
+import { FaFacebookF } from 'react-icons/fa';
+import { BsTwitter,BsInstagram } from 'react-icons/bs';
 
-             <div>
-                <footer className="footer  sticky bottom-0 container mx-auto p-10 left-0 right-0 ">
-                <aside>
-                    <img src="https://i.ibb.co/cX1h7zZ/2358045-removebg.png" className="w-22  h-14" alt="" />
-                    <p>GearGlade Ltd.<br />Providing reliable Gadget since 1992</p>
-                </aside>
-                <nav>
-                    <header className="footer-title">Services</header>
-                    <a className="link link-hover">Branding</a>
-                    <a className="link link-hover">Design</a>
-                    <a className="link link-hover">Marketing</a>
-                    <a className="link link-hover">Advertisement</a>
-                </nav>
-                <nav>
-                    <header className="footer-title">Company</header>
-                    <a className="link link-hover">About us</a>
-                    <a className="link link-hover">Contact</a>
-                    <a className="link link-hover">Jobs</a>
-                    <a className="link link-hover">Press kit</a>
-                </nav>
-                <nav>
-                    <header className="footer-title">Legal</header>
-                    <a className="link link-hover">Terms of use</a>
-                    <a className="link link-hover">Privacy policy</a>
-                    <a className="link link-hover">Cookie policy</a>
-                </nav>
-            </footer>
-             </div>
-           
-    );
-};
+const Footer = () => {
+  return (
+   <div className='bg-neutral'>
+     <footer className="footer p-10 container mx-auto  text-neutral-content">
+    <aside>
+      <img src="https://i.ibb.co/cX1h7zZ/2358045-removebg.png" className='h-18 w-20' alt="" />
+      <p>GearGlader Gadget Ltd.<br/>Providing reliable Gadget since 1996</p>
+    </aside> 
+    <nav>
+      <header className="footer-title ">Follow Us On </header> 
+      <div className="grid grid-flow-col gap-4 text-2xl">
+        <a><FaFacebookF></FaFacebookF></a> 
+        <a><BsTwitter></BsTwitter></a> 
+        <a><BsInstagram></BsInstagram></a>
+      </div>
+    </nav>
+  </footer>
+   </div>
+  );
+}
 
 export default Footer;

@@ -44,23 +44,23 @@ const routes = createBrowserRouter([
         path: '/product/:brandname',
         element: <PrivateRoute><Brandproduct></Brandproduct></PrivateRoute>,
         loader:({params})=>{
-          return fetch(`https://n-kilsngnip-arafat-sabbirs-projects.vercel.app/product/${params.brandname}`)
+          return fetch(`https://n-fs7xbfw8v-arafat-sabbirs-projects.vercel.app/product/${params.brandname}`)
         }
       },
       {
         path:"/items/:id",
         element:<PrivateRoute><ProductDetail></ProductDetail></PrivateRoute>,
-        loader:({params})=> fetch(`https://n-kilsngnip-arafat-sabbirs-projects.vercel.app/items/${params.id}`)
+        loader:({params})=> fetch(`https://n-fs7xbfw8v-arafat-sabbirs-projects.vercel.app/items/${params.id}`)
       },
       {
         path:"/details/:id",
         element:<PrivateRoute><DetailProduct></DetailProduct></PrivateRoute>,
-        loader:({params})=> fetch(`https://n-kilsngnip-arafat-sabbirs-projects.vercel.app/items/${params.id}`)
+        loader:({params})=> fetch(`https://n-fs7xbfw8v-arafat-sabbirs-projects.vercel.app/items/${params.id}`)
       },
       {
         path:"/myCart",
         element:<MyCart></MyCart>,
-        loader:()=> fetch('https://n-kilsngnip-arafat-sabbirs-projects.vercel.app/cart')
+        loader:()=> fetch('https://n-fs7xbfw8v-arafat-sabbirs-projects.vercel.app/cart')
       }
 
 

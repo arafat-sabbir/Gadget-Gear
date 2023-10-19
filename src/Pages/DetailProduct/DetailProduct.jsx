@@ -28,7 +28,7 @@ const DetailProduct = () => {
         console.log(Productinfo);
 
         // add to backend
-        fetch('https://n-kilsngnip-arafat-sabbirs-projects.vercel.app/cart', {
+        fetch('https://n-fs7xbfw8v-arafat-sabbirs-projects.vercel.app/cart', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

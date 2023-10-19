@@ -1,12 +1,13 @@
 import { AiOutlineDelete } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { Rating } from '@smastrom/react-rating'
+import PropType from 'prop-types'
 
 import '@smastrom/react-rating/style.css'
 
 
 const Product = ({ product, handleDelete }) => {
-    const { image, name, brandName, price, rating, type, _id, id } = product;
+    const { image, name, brandName, price, rating, type, _id,} = product;
 
     return (
         <div>
@@ -31,3 +32,8 @@ const Product = ({ product, handleDelete }) => {
 };
 
 export default Product;
+Product.propTypes = {
+    product:PropType.object,
+    handleDelete:PropType.func
+
+}

@@ -18,7 +18,7 @@ const ProductDetail = () => {
         const photourl = form.photourl.value;
         const Productinfo = { name, type, price, brandName:brand, description, rating, image:photourl };
         // add to backend
-        fetch(`https://n-kilsngnip-arafat-sabbirs-projects.vercel.app/product/${_id}`, {
+        fetch(`https://n-fs7xbfw8v-arafat-sabbirs-projects.vercel.app/product/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
