@@ -72,7 +72,7 @@ const SignUp = () => {
             })
     };
     return (
-        <div className="bg-[url('https://i.ibb.co/LZhwJ1T/workplace-business-modern-male-accessories-laptop-black-background-1.jpg')]   h-screen bg-cover bg-no-repeat   ">
+        <div className="bg-[url('https://i.ibb.co/LZhwJ1T/workplace-business-modern-male-accessories-laptop-black-background-1.jpg')]   h-screen bg-cover bg-no-repeat">
             <Navbar></Navbar>
             <div>
                 <div data-aos="zoom-in"
@@ -83,12 +83,13 @@ const SignUp = () => {
                     data-aos-once="false"
                     data-aos-anchor-placement="right"
                     className="hero min-h-[80vh]">
-                    <div className="hero-content flex-col gap-8">
-                        <h1 className="text-5xl font-bold text-white">Sign Up now!</h1>
-                        <div className="card  w-96   backdrop-blur-3xl bg-transparent pt-3">
+                    <div className="hero-content flex-col gap-8  w-full ">
+                        <h1 className="text-5xl font-bold   text-[#ff823485]">Sign Up now!</h1>
+                        <div className="card backdrop-blur-3xl  w-1/2 bg-transparent pt-3">
                             <div className="card-body">
                                 <form onSubmit={handleSubmit}>
-                                    <div className="form-control">
+                                   <div className="flex gap-4">
+                                   <div className="form-control w-full">
                                         <label className="label">
                                             <span className="label-text text-white">Name</span>
                                         </label>
@@ -96,11 +97,11 @@ const SignUp = () => {
                                             type="text"
                                             name="name"
                                             placeholder="your name"
-                                            className="input bg-transparent text-white input-bordered"
+                                            className="input bg-transparent text-white border border-[#ff823485]"
                                             required
                                         />
                                     </div>
-                                    <div className="form-control">
+                                    <div className="form-control w-full">
                                         <label className="label">
                                             <span className="label-text text-white">Photo url</span>
                                         </label>
@@ -108,11 +109,13 @@ const SignUp = () => {
                                             type="text"
                                             name="photoUrl"
                                             placeholder="photo url"
-                                            className="input bg-transparent text-white input-bordered"
+                                            className="input bg-transparent text-white border border-[#ff823485]"
                                             required
                                         />
                                     </div>
-                                    <div className="form-control">
+                                   </div>
+                                   <div className="flex gap-4">
+                                   <div className="form-control w-full">
                                         <label className="label">
                                             <span className="label-text text-white">Email</span>
                                         </label>
@@ -120,11 +123,11 @@ const SignUp = () => {
                                             type="emil"
                                             name="email"
                                             placeholder="email"
-                                            className="input bg-transparent text-white input-bordered"
+                                            className="input bg-transparent text-white border border-[#ff823485]"
                                             required
                                         />
                                     </div>
-                                    <div className="form-control">
+                                    <div className="form-control w-full">
                                         <label className="label">
                                             <span className="label-text text-white">Password</span>
                                         </label>
@@ -133,7 +136,7 @@ const SignUp = () => {
                                                 type={showP ? "text" : "password"}
                                                 name="password"
                                                 placeholder="password"
-                                                className="input bg-transparent text-white input-bordered"
+                                                className="input bg-transparent text-white border border-[#ff823485]"
                                                 required
                                             />
                                             <div className="my-1 text-red-400 font-medium">
@@ -148,21 +151,24 @@ const SignUp = () => {
                                                 {showP ? <GoEye /> : <GoEyeClosed />}
                                             </span>
                                         </div>
-                                        <label className="label">
-                                            <a href="#" className="label-text-alt text-gray-300 link link-hover">
+                                       
+                                    </div>
+                                    
+                                   </div>
+                                   <label className="flex justify-center my-2 w-full">
+                                            <a href="#" className="label-text-alt  text-gray-300 link link-hover">
                                                 Forgot password?
                                             </a>
                                         </label>
-                                    </div>
                                     <div className="form-control mt-6">
-                                        <button className="btn hover:bg-[#ff8234] bg-[#ff8234] border-none bg-opacity-80 font-semibold text-white">
+                                        <button className="btn  hover:bg-[#ff8234bd] bg-[#ff8234bd] border-none bg-opacity-80 font-semibold text-white">
                                             Sign Up
                                         </button>
                                     </div>
                                 </form>
                                 <div>
-                                    <p className="my-4 text-gray-300">
-                                        Do not have a account ? :{" "}
+                                    <p className="my-4  text-gray-300">
+                                        Do not have a account ? please  :{" "}
                                         <Link to={"/signIn"} className=" font-bold text-[#ff8234]">
                                             Sign In
                                         </Link>
@@ -170,7 +176,7 @@ const SignUp = () => {
                                 </div>
                                 <button
                                     onClick={handleGoogleSignin}
-                                    className="btn z-50 hover:bg-transparent w-full bg-transparent text-gray-300 font-semibold mb-3"
+                                    className="btn border  hover:border-[#ff823485] border-[#ff823485] z-50 hover:bg-transparent w-full mx-auto bg-transparent text-gray-300 font-semibold mb-3"
                                 >
                                     <FcGoogle></FcGoogle>
                                     Sign Up With Google

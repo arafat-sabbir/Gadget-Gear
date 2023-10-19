@@ -56,7 +56,6 @@ const AuthProvider = ({children}) => {
         });
         return unsubscribe;
       }, [auth]);
-      console.log(user);
     return (
         <Context.Provider value={contextValue}>
             {children}

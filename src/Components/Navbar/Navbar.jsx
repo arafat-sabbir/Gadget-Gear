@@ -73,11 +73,11 @@ const Navbar = () => {
           user && <img className="w-12 mr-4 h-12  rounded-full border-2 border-[#f7897d]" src={user?.photoURL ? user.photoURL : ''} alt="" />
         }
         {user ? (
-          <button className="btn hover:bg-[#ff8234] bg-[#ff8234] border-none rounded-full text-white" onClick={handleSignOut}>
+          <button className="btn hover:bg-[#ff8234e5] bg-[#ff8234e1] border-none rounded-full text-white" onClick={handleSignOut}>
             Sign Out
           </button>
         ) : (
-          <Link to={"/signIn "} className="btn rounded-full hover:bg-[#ff8234] bg-[#ff8234] border-none  w-24  text-white">
+          <Link to={"/signIn "} className="btn rounded-full hover:bg-[#ff8234e8] bg-[#ff8234f3] border-none  w-24  text-white">
             Login
           </Link>
         )}

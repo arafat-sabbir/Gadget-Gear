@@ -15,10 +15,9 @@ const Brand = () => {
             <div className={brands?"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center p-4 ":''}>
                 {
                     brands? brands?.map(brand => <BrandDetail key={brand.id} brand={brand}></BrandDetail>):
-                     <div >
-                        <img className="mx-auto" src="https://i.ibb.co/NNZHsTK/404.gif"></img>
-                    <h3 className="text-3xl font-semibold text-center text-[#ff8234] mb-12">Sorry Server Error..! <br /> Please Wait This will be fix soon..</h3>
-                     </div>
+                   <div className="flex justify-center items-center">
+                     <span className="loading loading-spinner text-warning loading-lg"></span>
+                   </div>
                 }
                 {
                     

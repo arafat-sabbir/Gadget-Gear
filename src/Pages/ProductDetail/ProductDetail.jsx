@@ -1,7 +1,10 @@
 import toast, { Toaster } from "react-hot-toast";
+import { useLoaderData } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
 
-const AddProduct = () => {
+const ProductDetail = () => {
+    const product = useLoaderData();
+    const { image, name, brandName, price, rating, type, id } = product;
 
     const handleAddProduct = (e) => {
         e.preventDefault();
@@ -17,7 +20,7 @@ const AddProduct = () => {
         console.log(Productinfo);
         // add to backend
         fetch('http://localhost:5000/product', {
-            method: 'POST',
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
@@ -26,24 +29,32 @@ const AddProduct = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.acknowledged) {
+                if (data.modifiedCount > 0) {
                     toast.success('successfully Added Product')
                 }
             })
     }
-
-
     return (
-        <div className="bg-[url('https://i.ibb.co/LZhwJ1T/workplace-business-modern-male-accessories-laptop-black-background-1.jpg')]   h-[100vh] bg-cover bg-no-repeat   ">
+        <div className="bg-[url('https://i.ibb.co/LZhwJ1T/workplace-business-modern-male-accessories-laptop-black-background-1.jpg')]   h-screen bg-cover bg-no-repeat">
             <Navbar></Navbar>
-             <div className="hero h-[86vh]  bg-transparent ">
-                <div className="hero-content flex-col  w-full">
-                    <div className="text-center">
-                        <h1 className=" text-[#FF8234] text-5xl font-bold">ADD Product!</h1>
+            <div>
+            <h3 className="text-3xl font-semibold text-center -mt-6 my-6 text-white">Update This Product</h3>
+                <div className="card md:card-side bg-transparent backdrop-blur-sm text-white drop-shadow-xl w-[90vw]   md:w-[50vw] mx-auto">
+                    <figure><img src={image} className="md:w-[330px] md:h-[235px]" alt="Movie" /></figure>
+                    <div className="card-body">
+                        <h3 > <span className='rounded-md  font-bold text-2xl'>{name}</span> </h3>
+                        <p className=" font-semibold md:text-xl" >{brandName}</p>
+                        <p className='font-medium'>{type}</p>
+                        <h3 className=" font-semibold">Price: ${price}.00</h3>
+                        <div className="card-actions">
+                        </div>
                     </div>
-                    <div className="card flex-shrink-0 w-full -2xl bg-transparent backdrop-blur-lg rounded-lg ">
-                        <form onSubmit={handleAddProduct} className="card-body">
-                            {/* name and chef row */}
+                </div>
+            </div>
+            <div className="hero  bg-transparent ">
+                <div className="hero-content flex-col  w-full">
+                    <div className="card flex-shrink-0 w-full  bg-transparent backdrop-blur-lg rounded-lg ">
+                        <form  onSubmit={handleAddProduct} className="card-body">
                             <div className="md:flex gap-4">
                                 <div className="form-control md:w-1/2">
                                     <label className="label">
@@ -62,7 +73,6 @@ const AddProduct = () => {
                                         placeholder="Photo Url" className="input text-gray-300 bg-transparent border border-[#ff823485] text-lg" required />
                                 </div>
                             </div>
-                            {/* tase  and supplier row */}
                             <div className="md:flex gap-4">
                                 <div className="form-control w-full">
                                     <label className="label">
@@ -81,7 +91,6 @@ const AddProduct = () => {
                                         placeholder="Enter Product Price" className="input text-gray-300 bg-transparent border border-[#ff823485] text-lg" required />
                                 </div>
                             </div>
-                            {/* category and detail row */}
                             <div className="md:flex gap-4">
                                 <div className="form-control md:w-1/2">
                                     <label className="label">
@@ -109,16 +118,17 @@ const AddProduct = () => {
                                     placeholder="Enter Short Description" className="input bg-transparent text-gray-300 border border-[#ff823485] text-lg" required />
                             </div>
 
-                            <div className="form-control mt-6">
-                                <input type="submit" value="Add Product" className="btn text-gray-200 border-none hover:bg-[#ff8234b4] bg-[#ff8234be]" />
+                            <div className="form-control mt-2">
+                                <input type="submit" value="Update" className="btn text-gray-200 border-none hover:bg-[#ff8234b4] bg-[#ff8234be]" />
                             </div>
                         </form>
                     </div>
                 </div>
                 <Toaster></Toaster>
             </div>
+
         </div>
     );
 };
 
-export default AddProduct;
+export default ProductDetail;

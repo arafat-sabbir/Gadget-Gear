@@ -7,7 +7,7 @@ const BrandDetail = ({ brand }) => {
 
     return (
         <div>
-           <Link to={`/brand/${id}`}>
+           <Link to={`/product/${brandname}`}>
            <div className="card w-72 drop-shadow-xl   transition duration-300 ease-in-out hover:scale-110 ">
                 <figure><img className="rounded-full border-2  hover:border-warning  p-10 " src={image} alt="Shoes" /></figure>
                 <div className="card-body">

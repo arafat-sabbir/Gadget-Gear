@@ -67,7 +67,7 @@ const SignIn = () => {
                     data-aos-anchor-placement="right"
                     className="hero min-h-[80vh]">
                     <div className="hero-content flex-col gap-8">
-                        <h1 className="text-5xl font-bold text-white">Sign In now!</h1>
+                        <h1 className="text-5xl font-bold text-[#FF8234]">Sign In now!</h1>
                         <div className="card  w-96   pt-3 backdrop-blur-3xl bg-transparent">
                             <div className="card-body">
                                 <form onSubmit={handleSignIn}>
@@ -79,7 +79,7 @@ const SignIn = () => {
                                             type="emil"
                                             name="email"
                                             placeholder="email"
-                                            className="input input-bordered bg-transparent text-white"
+                                            className="input border border-[#ff823485] bg-transparent text-white"
                                             required
                                         />
                                     </div>
@@ -92,7 +92,7 @@ const SignIn = () => {
                                                 type={showP ? "text" : "password"}
                                                 name="password"
                                                 placeholder="password"
-                                                className="input input-bordered bg-transparent text-white"
+                                                className="input border border-[#ff823485] bg-transparent text-white"
                                                 required
                                             />
                                             <span
@@ -109,7 +109,7 @@ const SignIn = () => {
                                         </label>
                                     </div>
                                     <div className="form-control mt-6">
-                                        <button className="btn hover:bg-[#ff8234] bg-[#ff8234] border-none bg-opacity-80 font-semibold text-white">
+                                        <button className="btn hover:bg-[#ff8234bd] bg-[#ff8234bd] border-none bg-opacity-80 font-semibold text-gray-200">
                                             Sign In
                                         </button>
                                     </div>
@@ -120,14 +120,14 @@ const SignIn = () => {
                                     }
                                     <p className="my-4 text-gray-300">
                                         Do not have a account ? :{" "}
-                                        <Link to={"/signUp"} className=" font-bold text-[#ff8234]">
+                                        <Link to={"/signUp"} className=" font-bold text-[#FF8234]">
                                             Sign Up
                                         </Link>
                                     </p>
                                 </div>
                                 <button
                                     onClick={handleGoogleSignin}
-                                    className="btn z-50 hover:bg-transparent w-full bg-transparent text-gray-300 font-semibold mb-3"
+                                    className="btn z-50 border hover:border-[#ff823485] border-[#ff823485] hover:bg-transparent w-full bg-transparent text-gray-300 font-semibold mb-3"
                                 >
                                     <FcGoogle></FcGoogle>
                                     Sign IN With Google
