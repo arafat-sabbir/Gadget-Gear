@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* body{
+  background-image: url('https://i.ibb.co/Khz54dJ/tyler-casey-bs-Jc2kf4ds-unsplash.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
+
