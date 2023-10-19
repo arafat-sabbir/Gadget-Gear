@@ -27,7 +27,7 @@ const AddProduct = () => {
         const Productinfo = { name, type, price, brandName:brand, description, rating, image:photourl };
         console.log(Productinfo);
         // add to backend
-        fetch('http://localhost:5000/product', {
+        fetch('https://n-kilsngnip-arafat-sabbirs-projects.vercel.app/product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

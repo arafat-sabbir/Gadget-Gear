@@ -18,7 +18,7 @@ const Brandproduct = () => {
         });
 
         if (willDelete) {
-            fetch(`http://localhost:5000/items/${_id}`, {
+            fetch(`https://n-kilsngnip-arafat-sabbirs-projects.vercel.app/items/${_id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())

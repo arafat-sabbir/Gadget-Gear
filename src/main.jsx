@@ -44,23 +44,23 @@ const routes = createBrowserRouter([
         path: '/product/:brandname',
         element: <PrivateRoute><Brandproduct></Brandproduct></PrivateRoute>,
         loader:({params})=>{
-          return fetch(`http://localhost:5000/product/${params.brandname}`)
+          return fetch(`https://n-kilsngnip-arafat-sabbirs-projects.vercel.app/product/${params.brandname}`)
         }
       },
       {
         path:"/items/:id",
         element:<PrivateRoute><ProductDetail></ProductDetail></PrivateRoute>,
-        loader:({params})=> fetch(`http://localhost:5000/items/${params.id}`)
+        loader:({params})=> fetch(`https://n-kilsngnip-arafat-sabbirs-projects.vercel.app/items/${params.id}`)
       },
       {
         path:"/details/:id",
-        element:<DetailProduct></DetailProduct>,
-        loader:({params})=> fetch(`http://localhost:5000/items/${params.id}`)
+        element:<PrivateRoute><DetailProduct></DetailProduct></PrivateRoute>,
+        loader:({params})=> fetch(`https://n-kilsngnip-arafat-sabbirs-projects.vercel.app/items/${params.id}`)
       },
       {
         path:"/myCart",
         element:<MyCart></MyCart>,
-        loader:()=> fetch('http://localhost:5000/cart')
+        loader:()=> fetch('https://n-kilsngnip-arafat-sabbirs-projects.vercel.app/cart')
       }
 
 
