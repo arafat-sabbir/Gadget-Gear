@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 
 const ProductDetail = () => {
     const product = useLoaderData();
-    const { image, name, brandName, price, rating, type,_id } = product;
+    const { image, name, brandName, price, rating, type,_id,description } = product;
 
     const handleUpdateProduct = (e) => {
         e.preventDefault();
@@ -124,7 +124,7 @@ const ProductDetail = () => {
                                 </label>
                                 <input type="text"
                                     name="description"
-                                    placeholder="Enter Short Description" className="input bg-transparent text-gray-300 border border-[#ff823485] text-lg" required />
+                                    placeholder="Enter Short Description" className="input bg-transparent text-gray-300 border border-[#ff823485] text-lg" defaultValue={description} />
                             </div>
 
                             <div className="form-control mt-2">

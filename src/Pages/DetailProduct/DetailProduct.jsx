@@ -69,18 +69,18 @@ const DetailProduct = () => {
                         data-aos-mirror="true"
                         data-aos-once="false"
                         data-aos-anchor-placement="left"
-                        className="w-1/2 ">
+                        className=" ">
                         <div className="flex items-center">
                             <div className="badge badge-success badge-sm"></div>
                             <p className="text-xl font-semibold text-gray-400 ml-2">Detail Of</p>
                         </div>
-                        <h3 className="lg:text-5xl text-3xl font-semibold my-8  ">{name}</h3>
-                        <div className="flex flex-col lg:flex-row items-center mb-6 gap-4">
-                            {/* <img className="w-16 h-16"  alt="" /> */}
+                        <h3 className="lg:text-4xl text-3xl font-semibold mt-3  ">{name}</h3>
+                        <div className="w-full mt-4 gap-4">
+                                <h1 className="text-xl text-gray-600  mb-2 font-medium">{description}</h1>
+                                <p className="  text-xl"></p>
                             <div>
-                                <h1 className="text-2xl mb-2 font-medium">{description}</h1>
-                                <p className="text-gray-400  text-xl">uhajlkdnfk</p>
-                            <button className="btn bg-[#FF8F49] hover:bg-[#FF8F49]" onClick={handleAddToCart}>Add To <BsCart2></BsCart2></button>
+                                <h3 className="text-2xl font-semibold text-gray-700 mb-2">Price : ${price}</h3>
+                            <button className="btn btn-wide bg-[#FF8F49] hover:bg-[#FF8F49]" onClick={handleAddToCart}>Add To <BsCart2></BsCart2></button>
 
                             </div>
                         </div>
