@@ -1,12 +1,12 @@
-import toast, { Toaster } from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
+import Swal from "sweetalert2";
 
 const ProductDetail = () => {
     const product = useLoaderData();
-    const { image, name, brandName, price, rating, type, id } = product;
+    const { image, name, brandName, price, rating, type,_id } = product;
 
-    const handleAddProduct = (e) => {
+    const handleUpdateProduct = (e) => {
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
@@ -17,9 +17,8 @@ const ProductDetail = () => {
         const rating = form.rating.value
         const photourl = form.photourl.value;
         const Productinfo = { name, type, price, brandName:brand, description, rating, image:photourl };
-        console.log(Productinfo);
         // add to backend
-        fetch('http://localhost:5000/product', {
+        fetch(`http://localhost:5000/product/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -30,10 +29,15 @@ const ProductDetail = () => {
             .then(data => {
                 console.log(data);
                 if (data.modifiedCount > 0) {
-                    toast.success('successfully Added Product')
+                    Swal.fire(
+                        'Great!',
+                        'Product detail Updated Successfully!',
+                        'success'
+                      )
                 }
             })
     }
+    
     return (
         <div className="bg-[url('https://i.ibb.co/LZhwJ1T/workplace-business-modern-male-accessories-laptop-black-background-1.jpg')]   h-screen bg-cover bg-no-repeat">
             <Navbar></Navbar>
@@ -54,7 +58,7 @@ const ProductDetail = () => {
             <div className="hero  bg-transparent ">
                 <div className="hero-content flex-col  w-full">
                     <div className="card flex-shrink-0 w-full  bg-transparent backdrop-blur-lg rounded-lg ">
-                        <form  onSubmit={handleAddProduct} className="card-body">
+                        <form  onSubmit={handleUpdateProduct} className="card-body">
                             <div className="md:flex gap-4">
                                 <div className="form-control md:w-1/2">
                                     <label className="label">
@@ -62,7 +66,7 @@ const ProductDetail = () => {
                                     </label>
                                     <input type="text"
                                         name="name"
-                                        placeholder="Product name" className="input text-gray-300 bg-transparent border border-[#ff823488]  text-lg" required />
+                                        placeholder="Product name" defaultValue={name} className="input text-gray-300 bg-transparent border border-[#ff823488]  text-lg" required />
                                 </div>
                                 <div className="form-control md:w-1/2">
                                     <label className="label">
@@ -70,6 +74,7 @@ const ProductDetail = () => {
                                     </label>
                                     <input type="text"
                                         name="photourl"
+                                        defaultValue={image}
                                         placeholder="Photo Url" className="input text-gray-300 bg-transparent border border-[#ff823485] text-lg" required />
                                 </div>
                             </div>
@@ -79,6 +84,7 @@ const ProductDetail = () => {
                                         <span className="label-text text-lg text-gray-300">Product Type</span>
                                     </label>
                                     <input type="text"
+                                    defaultValue={type}
                                         name="type"
                                         placeholder="Product Type" className="input text-gray-300 bg-transparent border border-[#ff823485] text-lg" required />
                                 </div>
@@ -87,6 +93,7 @@ const ProductDetail = () => {
                                         <span className="label-text text-lg text-gray-300">Product Price</span>
                                     </label>
                                     <input type="text"
+                                    defaultValue={price}
                                         name="price"
                                         placeholder="Enter Product Price" className="input text-gray-300 bg-transparent border border-[#ff823485] text-lg" required />
                                 </div>
@@ -97,6 +104,7 @@ const ProductDetail = () => {
                                         <span className="label-text text-lg text-gray-300">Brand Name</span>
                                     </label>
                                     <input type="text"
+                                    defaultValue={brandName}
                                         name="brand"
                                         placeholder="Brand Name" className="input text-gray-300 bg-transparent border border-[#ff823485] text-lg" required />
                                 </div>
@@ -106,6 +114,7 @@ const ProductDetail = () => {
                                     </label>
                                     <input type="text"
                                         name="rating"
+                                        defaultValue={rating}
                                         placeholder="Product detail" className="input text-gray-300 bg-transparent border border-[#ff823485] text-lg" required />
                                 </div>
                             </div>
@@ -124,7 +133,6 @@ const ProductDetail = () => {
                         </form>
                     </div>
                 </div>
-                <Toaster></Toaster>
             </div>
 
         </div>
