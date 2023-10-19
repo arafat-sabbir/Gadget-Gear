@@ -4,10 +4,11 @@ import Product from "../Product/Product";
 import Footer from "../../Components/Footer/Footer";
 import { useState } from "react";
 import swal from "sweetalert";
+import ErrorPage from "../ErrorPage/ErrorPage";
 
 const Brandproduct = () => {
     const loadedproducts = useLoaderData();
-    const [products, setProduct] = useState(loadedproducts)
+    const [products,setProduct] = useState(loadedproducts)
     const handleDelete = async (_id) => {
         const willDelete = await swal({
             title: "Are you sure?",
@@ -36,14 +37,18 @@ const Brandproduct = () => {
     return (
         <div>
             <div className="container mx-auto">
-                <Navbar></Navbar>
-                <div className="grid grid-cols-1  lg:grid-cols-2 gap-8">
-                    {
-                        products?.map(product => <Product handleDelete={handleDelete} key={product.id} product={product}></Product>)
-                    }
-                </div>
+            <Navbar></Navbar>
+            <div className={`${loadedproducts.length?"grid grid-cols-1 my-20 lg:grid-cols-2 gap-8 mx-auto justify-center":'h-[64vh] items-center justify-center'}`}>
+                {
+                    loadedproducts.length ?
+                        products?.map(product => <Product handleDelete={handleDelete} key={product.id} product={product}></Product>):<div>
+                            <img src="https://i.ibb.co/gTSPFgD/icons8-unavailable-500.png" className="mx-auto flex justify-center items-center" alt="" />
+                            <h3 className="text-center text-[#FF8F49] text-3xl font-semibold">Sorry ! No Product Available For This Brand.. </h3>
+                        </div>
+                    
+                }
             </div>
-            <Footer></Footer>
+        </div>
         </div>
     );
 };

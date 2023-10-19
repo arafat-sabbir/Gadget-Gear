@@ -17,7 +17,7 @@ const Product = ({ product,handleDelete }) => {
                     <div className="card-actions">
                     <Link to={`/items/${_id}`}><button className="btn btn-sm btn-outline">Update</button></Link>
                     <Link to={`/details/${_id}`}><button className="btn btn-sm btn-outline">Details</button></Link>
-                        {/* <button onClick={()=>handleDelete(_id)} className="btn btn-error btn-sm btn-outline"><AiOutlineDelete></AiOutlineDelete></button> */}
+                        <button onClick={()=>handleDelete(_id)} className="btn btn-error btn-sm btn-outline"><AiOutlineDelete></AiOutlineDelete></button>
                     </div>
                 </div>
             </div>

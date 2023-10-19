@@ -24,7 +24,7 @@ const Navbar = () => {
         <NavLink to={"/addProduct"}>Add Product</NavLink>
       </li>
       <li >
-        <NavLink to={"/about"}> My <span className="text-xl"><BsCart2></BsCart2></span></NavLink>
+        <NavLink to={"/myCart"}> My <span className="text-xl"><BsCart2></BsCart2></span></NavLink>
       </li>
     </>
   );

@@ -2,6 +2,17 @@ import toast, { Toaster } from "react-hot-toast";
 import Navbar from "../../Components/Navbar/Navbar";
 
 const AddProduct = () => {
+    const notify = () => toast.success('successfully Added Product', {
+        style: {
+            border: '1px solid #FF8F49',
+            padding: '16px',
+            color: '#FF8F49',
+        },
+        iconTheme: {
+            primary: '#FF8F49',
+            secondary: '#FFFAEE',
+        },
+    });
 
     const handleAddProduct = (e) => {
         e.preventDefault();
@@ -27,7 +38,7 @@ const AddProduct = () => {
             .then(data => {
                 console.log(data);
                 if (data.acknowledged) {
-                    toast.success('successfully Added Product')
+                    notify()
                 }
             })
     }

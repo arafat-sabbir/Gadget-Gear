@@ -1,8 +1,8 @@
 const Footer = () => {
     return (
 
-             <div className="bg-slate-200">
-                <footer className="footer  p-10 container mx-auto ">
+             <div>
+                <footer className="footer  sticky bottom-0 container mx-auto p-10 left-0 right-0 ">
                 <aside>
                     <img src="https://i.ibb.co/cX1h7zZ/2358045-removebg.png" className="w-22  h-14" alt="" />
                     <p>GearGlade Ltd.<br />Providing reliable Gadget since 1992</p>

@@ -43,7 +43,7 @@ const ProductDetail = () => {
             <Navbar></Navbar>
             <div>
             <h3 className="text-3xl font-semibold text-center -mt-6 my-6 text-white">Update This Product</h3>
-                <div className="card md:card-side bg-transparent backdrop-blur-sm text-white drop-shadow-xl w-[90vw]   md:w-[50vw] mx-auto">
+                <div className="card md:card-side bg-transparent backdrop-blur-sm text-white drop-shadow-3xl w-[90vw]   md:w-[50vw] mx-auto">
                     <figure><img src={image} className="md:w-[330px] md:h-[235px]" alt="Movie" /></figure>
                     <div className="card-body">
                         <h3 > <span className='rounded-md  font-bold text-2xl'>{name}</span> </h3>
