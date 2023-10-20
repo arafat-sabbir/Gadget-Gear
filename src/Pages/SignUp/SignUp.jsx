@@ -9,6 +9,7 @@ import 'aos/dist/aos.css';
 import { Context } from "../../Components/AuthProvider/AuthProvider";
 
 const SignUp = () => {
+    const correctPassPatern = /^(?=.*[A-Z])(?=.*[\W_]).{6,}$/;
     const [showP, setShowp] = useState(false);
     const [error, setError] = useState('')
     const notify = () => toast.success('Sign Up Successful.', {
@@ -48,8 +49,8 @@ const SignUp = () => {
 
         if (password.length < 6) {
             return setError('Password should be at least 6 characters long.');
-        } else if (!/[@#$%^&*()_+-=]/.test(password) || !/[A-Z]/.test(password)) {
-            return setError('Your password should contain at least one uppercase letter and  one special character.');
+        } else if (!correctPassPatern.test(password)) {
+            return setError('Your password should contain at least one uppercase letter and One Special Character .');
         }
 
         signUpUser(email, password)

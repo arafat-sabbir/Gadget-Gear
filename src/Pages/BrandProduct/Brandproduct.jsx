@@ -6,8 +6,8 @@ import swal from "sweetalert";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-
-// import required modules
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { Pagination } from 'swiper/modules';
 import Footer from "../../Components/Footer/Footer";
 
@@ -23,7 +23,7 @@ const Brandproduct = () => {
         });
 
         if (willDelete) {
-            fetch(`https://n-mqijp1ia6-arafat-sabbirs-projects.vercel.app/items/${_id}`, {
+            fetch(`https://gadgetgear-server.vercel.app/items/${_id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())
@@ -39,6 +39,7 @@ const Brandproduct = () => {
                 })
         }
     }
+    AOS.init();
     return (
         <div>
             <div className="container mx-auto">
@@ -63,8 +64,7 @@ const Brandproduct = () => {
                                     </div>
                                 </div>
                             </SwiperSlide>
-                            <SwiperSlide>
-                               
+                            <SwiperSlide> 
                             <div className="rounded-lg bg-[url('https://i.ibb.co/C6xnR5N/header-home-5.jpg')] bg-cover bg-no-repeat h-[400px] card lg:card-side bg-base-100 shadow-xl">
                                     <div className="flex justify-center flex-col mx-10">
                                         <p className="text-xl font-semibold text-blue-700 my-2">#WeekLyDeals..</p>
@@ -87,7 +87,13 @@ const Brandproduct = () => {
                 }
                 {/* swiper js */}
 
-                <div className={`${loadedproducts.length ? "grid grid-cols-1  my-20 lg:grid-cols-2 gap-8 mx-auto justify-center" : 'h-[68vh] items-center justify-center pb-1'}`}>
+                <div data-aos="fade-down"
+                    data-aos-offset="200"
+                    data-aos-duration="1500"
+                    data-aos-mirror="true"
+                    data-aos-once="false"
+                    data-aos-anchor-placement="top"
+                className={`${loadedproducts.length ? "grid grid-cols-1  my-20 lg:grid-cols-2 gap-8 mx-auto justify-center" : 'h-[68vh] items-center justify-center pb-1'}`}>
                     {
                         loadedproducts.length ?
                             products?.map(product => <Product handleDelete={handleDelete} key={product.id} product={product}></Product>) : <div>

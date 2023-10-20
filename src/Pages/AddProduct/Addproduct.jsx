@@ -27,7 +27,7 @@ const AddProduct = () => {
         const Productinfo = { name, type, price, brandName:brand, description, rating, image:photourl };
         console.log(Productinfo);
         // add to backend
-        fetch('https://n-mqijp1ia6-arafat-sabbirs-projects.vercel.app/product', {
+        fetch('https://gadgetgear-server.vercel.app/product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -58,66 +58,66 @@ const AddProduct = () => {
                             <div className="md:flex gap-4">
                                 <div className="form-control md:w-1/2">
                                     <label className="label">
-                                        <span className="label-text text-lg text-gray-300">Product Name</span>
+                                        <span className="label-text text-lg lg:text-gray-300">Product Name</span>
                                     </label>
                                     <input type="text"
                                         name="name"
-                                        placeholder="Product name" className="input text-gray-300 bg-transparent border border-[#ff823488]  text-lg" required />
+                                        placeholder="Product name" className="input lg:text-gray-300 bg-transparent border border-[#ff823488]  text-lg" required />
                                 </div>
                                 <div className="form-control md:w-1/2">
                                     <label className="label">
-                                        <span className="label-text text-lg text-gray-300">Photo Url</span>
+                                        <span className="label-text text-lg lg:text-gray-300">Photo Url</span>
                                     </label>
                                     <input type="text"
                                         name="photourl"
-                                        placeholder="Photo Url" className="input text-gray-300 bg-transparent border border-[#ff823485] text-lg" required />
+                                        placeholder="Photo Url" className="input lg:text-gray-300 bg-transparent border border-[#ff823485] text-lg" required />
                                 </div>
                             </div>
                             {/* tase  and supplier row */}
                             <div className="md:flex gap-4">
                                 <div className="form-control w-full">
                                     <label className="label">
-                                        <span className="label-text text-lg text-gray-300">Product Type</span>
+                                        <span className="label-text text-lg lg:text-gray-300">Product Type</span>
                                     </label>
                                     <input type="text"
                                         name="type"
-                                        placeholder="Product Type" className="input text-gray-300 bg-transparent border border-[#ff823485] text-lg" required />
+                                        placeholder="Product Type" className="input lg:text-gray-300 bg-transparent border border-[#ff823485] text-lg" required />
                                 </div>
                                 <div className="form-control w-full">
                                     <label className="label">
-                                        <span className="label-text text-lg text-gray-300">Product Price</span>
+                                        <span className="label-text text-lg lg:text-gray-300">Product Price</span>
                                     </label>
                                     <input type="text"
                                         name="price"
-                                        placeholder="Enter Product Price" className="input text-gray-300 bg-transparent border border-[#ff823485] text-lg" required />
+                                        placeholder="Enter Product Price" className="input lg:text-gray-300 bg-transparent border border-[#ff823485] text-lg" required />
                                 </div>
                             </div>
                             {/* category and detail row */}
                             <div className="md:flex gap-4">
                                 <div className="form-control md:w-1/2">
                                     <label className="label">
-                                        <span className="label-text text-lg text-gray-300">Brand Name</span>
+                                        <span className="label-text text-lg lg:text-gray-300">Brand Name</span>
                                     </label>
                                     <input type="text"
                                         name="brand"
-                                        placeholder="Brand Name" className="input text-gray-300 bg-transparent border border-[#ff823485] text-lg" required />
+                                        placeholder="Brand Name" className="input lg:text-gray-300 bg-transparent border border-[#ff823485] text-lg" required />
                                 </div>
                                 <div className="form-control md:w-1/2">
                                     <label className="label">
-                                        <span className="label-text text-lg text-gray-300">Product Rating</span>
+                                        <span className="label-text text-lg lg:text-gray-300">Product Rating</span>
                                     </label>
                                     <input type="text"
                                         name="rating"
-                                        placeholder="Product detail" className="input text-gray-300 bg-transparent border border-[#ff823485] text-lg" required />
+                                        placeholder="Product detail" className="input lg:text-gray-300 bg-transparent border border-[#ff823485] text-lg" required />
                                 </div>
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text text-lg text-gray-300">Short Description</span>
+                                    <span className="label-text text-lg lg:text-gray-300">Short Description</span>
                                 </label>
                                 <input type="text"
                                     name="description"
-                                    placeholder="Enter Short Description" className="input bg-transparent text-gray-300 border border-[#ff823485] text-lg" required />
+                                    placeholder="Enter Short Description" className="input bg-transparent lg:text-gray-300 border border-[#ff823485] text-lg" required />
                             </div>
 
                             <div className="form-control mt-6">

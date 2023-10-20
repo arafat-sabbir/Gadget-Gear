@@ -44,23 +44,23 @@ const routes = createBrowserRouter([
         path: '/product/:brandname',
         element: <PrivateRoute><Brandproduct></Brandproduct></PrivateRoute>,
         loader:({params})=>{
-          return fetch(`https://n-mqijp1ia6-arafat-sabbirs-projects.vercel.app/product/${params.brandname}`)
+          return fetch(`https://gadgetgear-server.vercel.app/product/${params.brandname}`)
         }
       },
       {
         path:"/items/:id",
         element:<PrivateRoute><ProductDetail></ProductDetail></PrivateRoute>,
-        loader:({params})=> fetch(`https://n-mqijp1ia6-arafat-sabbirs-projects.vercel.app/items/${params.id}`)
+        loader:({params})=> fetch(`https://gadgetgear-server.vercel.app/items/${params.id}`)
       },
       {
         path:"/details/:id",
         element:<PrivateRoute><DetailProduct></DetailProduct></PrivateRoute>,
-        loader:({params})=> fetch(`https://n-mqijp1ia6-arafat-sabbirs-projects.vercel.app/items/${params.id}`)
+        loader:({params})=> fetch(`https://gadgetgear-server.vercel.app/items/${params.id}`)
       },
       {
         path:"/myCart",
         element:<MyCart></MyCart>,
-        loader:()=> fetch('https://n-mqijp1ia6-arafat-sabbirs-projects.vercel.app/cart')
+        loader:()=> fetch('https://gadgetgear-server.vercel.app/cart')
       }
 
 

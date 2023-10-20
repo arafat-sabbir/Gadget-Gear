@@ -17,7 +17,7 @@ const MyCart = () => {
             dangerMode: true,
         });
         if (willDelete) {
-            fetch(`https://n-mqijp1ia6-arafat-sabbirs-projects.vercel.app/cart/${_id}`, {
+            fetch(`https://gadgetgear-server.vercel.app/cart/${_id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())
