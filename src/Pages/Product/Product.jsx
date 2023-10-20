@@ -11,7 +11,7 @@ const Product = ({ product, handleDelete }) => {
 
     return (
         <div>
-            <div className="card md:card-side bg-base-100 drop-shadow-xl w-[90vw] lg:w-auto  md:w-[90vw] mx-auto">
+            <div className="card md:card-side bg-base-100 border-2 hover:border-r-[#FF8234]  transition ease-in-out duration-300 hover:scale-105  w-[90vw] lg:w-auto  md:w-[90vw] mx-auto">
                 <figure><img src={image} className="md:w-[350px] h-[370px] md:h-[283px]" alt="Movie" /></figure>
                 <div className="card-body">
                     <h3 > <span className='rounded-md  font-bold text-2xl'>{name}</span> </h3>

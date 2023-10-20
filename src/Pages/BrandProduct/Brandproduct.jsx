@@ -23,7 +23,7 @@ const Brandproduct = () => {
         });
 
         if (willDelete) {
-            fetch(`https://n-fs7xbfw8v-arafat-sabbirs-projects.vercel.app/items/${_id}`, {
+            fetch(`https://n-mqijp1ia6-arafat-sabbirs-projects.vercel.app/items/${_id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())
@@ -87,7 +87,7 @@ const Brandproduct = () => {
                 }
                 {/* swiper js */}
 
-                <div className={`${loadedproducts.length ? "grid grid-cols-1 my-20 lg:grid-cols-2 gap-8 mx-auto justify-center" : 'h-[64vh] items-center justify-center'}`}>
+                <div className={`${loadedproducts.length ? "grid grid-cols-1  my-20 lg:grid-cols-2 gap-8 mx-auto justify-center" : 'h-[68vh] items-center justify-center pb-1'}`}>
                     {
                         loadedproducts.length ?
                             products?.map(product => <Product handleDelete={handleDelete} key={product.id} product={product}></Product>) : <div>

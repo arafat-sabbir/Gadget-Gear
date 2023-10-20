@@ -5,9 +5,9 @@ const WhyUs = () => {
     AOS.init();
     return (
         <div>
-            <div className="flex items-center justify-center">
-                <div className="badge badge-success badge-sm"></div>
-                <p className="text-5xl font-semibold  ml-2">Why Choose us</p>
+            <div className="flex  items-center justify-center">
+                <div className="badge mb-12 badge-success badge-sm"></div>
+                <p className="text-5x mb-12  font-semibold  ml-2">Why Choose us</p>
             </div>
             <div className="container mx-auto items-center flex flex-col lg:flex-row gap-20 lg:gap-4 ">
                 <div data-aos="fade-right"

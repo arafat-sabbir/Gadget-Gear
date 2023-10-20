@@ -1,23 +1,51 @@
-// import 'swiper/css';
-// import 'swiper/css/pagination';
-// import './styles.css';
-// import { Swiper, SwiperSlide } from 'swiper/react'
-// import {  Pagination } from 'swiper/modules';
-// import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
 
 
 
 const Banner = () => {
     return (
-        <div className="container mx-auto lg:flex gap-5 justify-center text-center items-center lg:-mt-10">
-            <div className=" lg:w-1/2 text-center">
-                <h3 className="md:text-5xl text-2xl font-semibold ">Discover Tomorrow's Tech Today At  <span className="text-bold text-[#FF8234]">GadgetGear</span>  Your Gadget Wonderland!</h3>
-            </div>
-            <div className="w-1/2 mx-auto lg:mx-0">
-                <img src="https://i.ibb.co/SNvh6rT/banner.jpg" alt="" />
-            </div>
+        <div className='container mx-auto'>
+            <Swiper
+                pagination={{
+                    dynamicBullets: true,
+                }}
+                modules={[Pagination]}
+                className="mySwiper"
+            >
+                <SwiperSlide>
 
-        </div >
+                    <div className="rounded-xl bg-[url('https://i.ibb.co/9ZzMpGX/header-home-2.jpg')] bg-cover bg-no-repeat h-[400px] card lg:card-side bg-base-100 shadow-xl">
+                        <div className="flex justify-center flex-col mx-10">
+                            <p className="text-xl font-semibold text-blue-700 my-2">#MonthlyDeals..</p>
+                            <h2 className="text-5xl font-bold">FLat 25% Discount on Mobile Phone <br />For Whole One Month</h2>
+                            <button className="btn my-2 bg-[#FF914C] hover:bg-[#FF914C] w-[200px]">Get Promo</button>
+                        </div>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+
+                    <div className="rounded-lg bg-[url('https://i.ibb.co/C6xnR5N/header-home-5.jpg')] bg-cover bg-no-repeat h-[400px] card lg:card-side bg-base-100 shadow-xl">
+                        <div className="flex justify-center flex-col mx-10">
+                            <p className="text-xl font-semibold text-blue-700 my-2">#WeekLyDeals..</p>
+                            <h2 className="text-5xl font-bold">FLat 10% Cashback on Online Payment <br />For  One Week</h2>
+                            <button className="btn my-2 bg-[#FF914C] hover:bg-[#FF914C] w-[200px]">Get Promo</button>
+                        </div>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className="rounded-lg bg-[url('https://i.ibb.co/7rCZMZ4/header-home-1-1.jpg')] bg-cover bg-no-repeat h-[400px] card lg:card-side bg-base-100 shadow-xl">
+                        <div className="flex justify-center flex-col mx-10">
+                            <p className="text-xl font-semibold text-blue-700 my-2">#DailyDeals..</p>
+                            <h2 className="text-5xl font-bold">Get Rewards On every Purchase<br />You make Today</h2>
+                            <button className="btn my-2 bg-[#FF914C] hover:bg-[#FF914C] w-[200px]">Get Promo</button>
+                        </div>
+                    </div>
+                </SwiperSlide>
+            </Swiper>
+        </div>
     );
 };
 

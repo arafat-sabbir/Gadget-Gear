@@ -4,7 +4,7 @@ const Support = () => {
             <h3 className="text-4xl font-semibold text-center">WELCOME TO GADGETGLADE SUPPORT. WE'RE HERE TO HELP.</h3>
             <h3 className="text-2xl font-semibold text-center my-4 text-gray-400 mb-12">ALWAYS ON YOUR SIDE WHEN YOU NEED HELP</h3>
            <div className="lg:flex lg:gap-40 justify-center">
-           <div className="flex lg:w-4/12 mb-4 lg:mb-0 h-[300px] bg-base-100 border-2 hover:border-b-[#ff8234] rounded-2xl">
+           <div className="flex lg:w-4/12 mb-4 lg:mb-0 h-[300px] bg-base-100 border-2 hover:border-b-[#ff8234] rounded-2xl transition duration-300 ease-in-out hover:scale-110">
                 <div className="flex items-center gap-4">
                 <img src="https://i.ibb.co/DMVbtbz/phone-icn.png" className="w-20 h-20" alt="" />
                 <div>
@@ -15,7 +15,7 @@ const Support = () => {
                 </div>
                 </div>
             </div>
-            <div className="flex lg:w-4/12 h-[300px] bg-base-100 border-2 hover:border-b-[#ff8234] rounded-2xl">
+            <div className="flex lg:w-4/12 h-[300px] bg-base-100 border-2 hover:border-b-[#ff8234] rounded-2xl transition duration-300 ease-in-out hover:scale-110">
                 <div className="flex items-center gap-4">
                 <img src="https://i.ibb.co/0ccvVwz/chat-icn.png" className="w-20 h-20" alt="" />
                 <div>
