@@ -15,7 +15,7 @@ const Support = () => {
                     data-aos-mirror="true"
                     data-aos-once="false"
                     data-aos-anchor-placement="right"
-           className="flex lg:w-4/12 mb-4 bg-[#d1ecfd9d] lg:mb-0 h-[300px]  border-2 hover:border-[#ff8234] rounded-2xl transition duration-300 ease-in-out hover:scale-110">
+           className="flex lg:w-4/12 mb-4 bg-[#d1ecfd9d] lg:mb-0 h-[300px] shadow-[0_0_70px_#00000028]  hover:shadow-[#FF7E38C6] rounded-2xl duration-300">
                 <div className="flex items-center gap-4">
                 <img src="https://i.ibb.co/DMVbtbz/phone-icn.png" className="w-20 h-20" alt="" />
                 <div>
@@ -32,7 +32,7 @@ const Support = () => {
                     data-aos-mirror="true"
                     data-aos-once="false"
                     data-aos-anchor-placement="left"
-            className="flex bg-[#DFE7FD] lg:w-4/12 h-[300px] border-2 hover:border-[#ff8234] rounded-2xl transition duration-300 ease-in-out hover:scale-110">
+            className="flex bg-[#DFE7FD] lg:w-4/12 h-[300px] shadow-[0_0_70px_#00000028]  hover:shadow-[#FF7E38C6] rounded-2xl duration-300 ">
                 <div className="flex items-center gap-4">
                 <img src="https://i.ibb.co/0ccvVwz/chat-icn.png" className="w-20 h-20" alt="" />
                 <div>

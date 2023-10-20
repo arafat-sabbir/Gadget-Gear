@@ -4,12 +4,18 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { BsCart2 } from 'react-icons/bs';
 import toast, { Toaster } from "react-hot-toast";
+import { useContext } from "react";
+import { Context } from "../../Components/AuthProvider/AuthProvider";
 
 
 const DetailProduct = () => {
-
+    const { user } = useContext(Context)
+    console.log(user);
+    console.log(user.email);
     const product = useLoaderData();
     const { image, name, brandName, price, rating, type, _id, description } = product;
+    const userEmail = user.email;
+
     AOS.init();
     const notify = () => toast.success('Successfully Added To Cart', {
         style: {
@@ -24,11 +30,13 @@ const DetailProduct = () => {
     });
     const handleAddToCart = (e) => {
         e.preventDefault();
-        const Productinfo = { name, type, price, brandName, description, rating, image,productId:_id };
+        console.log(user);
+        console.log(user.email);
+        const Productinfo = { name, type, price, brandName, description, rating, image, productId: _id, userEmail };
         console.log(Productinfo);
 
         // add to backend
-        fetch('https://gadgetgear-server.vercel.app/cart', {
+        fetch(`https://gadgetgear-server.vercel.app/cart/`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -37,14 +45,14 @@ const DetailProduct = () => {
         })
             .then(res => res.json())
             .then(data => {
-                
+
                 if (data.acknowledged) {
                     notify()
                     console.log(data)
                 }
             })
     }
-  
+
 
 
     return (
@@ -76,18 +84,18 @@ const DetailProduct = () => {
                         </div>
                         <h3 className="lg:text-4xl text-3xl font-semibold mt-3  ">{name}</h3>
                         <div className="w-full mt-4 gap-4">
-                                <h1 className="text-xl text-gray-600  mb-2 font-medium">{description}</h1>
-                                <p className="  text-xl"></p>
+                            <h1 className="text-xl text-gray-600  mb-2 font-medium">{description}</h1>
+                            <p className="  text-xl"></p>
                             <div>
                                 <h3 className="text-2xl font-semibold text-gray-700 mb-2">Price : ${price}</h3>
-                            <button className="btn btn-wide bg-[#FF8F49] hover:bg-[#FF8F49]" onClick={handleAddToCart}>Add To <BsCart2></BsCart2></button>
+                                <button className="btn btn-wide bg-[#FF8F49] hover:bg-[#FF8F49]" onClick={handleAddToCart}>Add To <BsCart2></BsCart2></button>
 
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        <Toaster></Toaster>
+            <Toaster></Toaster>
         </div>
     );
 };

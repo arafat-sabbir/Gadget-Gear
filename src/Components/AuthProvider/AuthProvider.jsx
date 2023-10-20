@@ -4,38 +4,37 @@ import { createContext, useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 import app from "../Firebase/Firebase.config";
 
-export const Context = createContext(null)
+export const Context = createContext('')
 
-const AuthProvider = ({children}) => {
+const AuthProvider = ({ children }) => {
 
-    const [user,setUser] = useState(null)
-    const [loader,setLoader] = useState(true)
-
+    const [user, setUser] = useState('')
+    const [loader, setLoader] = useState(true)
     const auth = getAuth(app);
 
     const googleProvider = new GoogleAuthProvider()
 
-    const signWithGoogle = ()=>{
+    const signWithGoogle = () => {
         setLoader(true)
-        return signInWithPopup(auth,googleProvider)
-    }
-    
-    const signUpUser = (email,password)=>{
-        setLoader(true)
-        return createUserWithEmailAndPassword(auth,email,password)
+        return signInWithPopup(auth, googleProvider)
     }
 
-    const updateUserProfile = (name,photoUrl)=>{
+    const signUpUser = (email, password) => {
         setLoader(true)
-        return updateProfile(auth.currentUser,{
+        return createUserWithEmailAndPassword(auth, email, password)
+    }
+
+    const updateUserProfile = (name, photoUrl) => {
+        setLoader(true)
+        return updateProfile(auth.currentUser, {
             displayName: name, photoURL: photoUrl
         })
     }
-    const signInUser = (email,password)=>{
+    const signInUser = (email, password) => {
         setLoader(true)
-        return signInWithEmailAndPassword(auth,email,password)
+        return signInWithEmailAndPassword(auth, email, password)
     }
-    const signOutUser = ()=>{
+    const signOutUser = () => {
         return signOut(auth)
     }
 
@@ -48,14 +47,14 @@ const AuthProvider = ({children}) => {
         signOutUser,
         updateUserProfile
     }
-    
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-          setUser(currentUser);
-          setLoader(false)
-        });
-        return unsubscribe;
-      }, [auth]);
+        const unsubscribe = onAuthStateChanged(auth, currentUser => {
+            setUser(currentUser)
+            setLoader(false)
+        })
+        return () => unsubscribe();
+    }, []);
+    console.log(user);
     return (
         <Context.Provider value={contextValue}>
             {children}
@@ -65,6 +64,6 @@ const AuthProvider = ({children}) => {
 
 export default AuthProvider;
 
-AuthProvider.propTypes ={
-    children:PropTypes.node
+AuthProvider.propTypes = {
+    children: PropTypes.node
 }

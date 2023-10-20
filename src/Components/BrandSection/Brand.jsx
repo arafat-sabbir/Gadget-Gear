@@ -8,7 +8,6 @@ const Brand = () => {
             .then(res => res.json())
             .then(data => setBrands(data))
     }, [])
-    console.log(brands);
     return (
         <div className="container mx-auto my-12">
             <h3 className="text-4xl text-center text-[#ff8234] font-semibold mb-6">Search By Brand</h3>

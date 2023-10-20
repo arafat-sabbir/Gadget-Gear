@@ -10,7 +10,7 @@ const CartProduct = ({data,handleDelete}) => {
     return (
         <div>
             <div className="">
-                        <div className="card   drop-shadow-xl border-2 hover:border-b-[#FF8234] lg:w-[400px] mx-auto">
+                        <div className="card   drop-shadow-xl shadow-[0_0_70px_#00000028] duration-300 hover:shadow-[#FF7E38C6] lg:w-[400px] mx-auto">
                             <figure><img src={image} className="w-full h-[300px] bg-transparent"  alt="Movie" /></figure>
                             <div className="card-body">
                                 <h3 > <span className='rounded-md  font-bold text-2xl'>{name}</span> </h3>

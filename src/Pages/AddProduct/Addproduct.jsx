@@ -1,7 +1,11 @@
 import toast, { Toaster } from "react-hot-toast";
 import Navbar from "../../Components/Navbar/Navbar";
+import { useContext } from "react";
+import { Context } from "../../Components/AuthProvider/AuthProvider";
 
 const AddProduct = () => {
+    const {user} = useContext(Context)
+    console.log(user);
     const notify = () => toast.success('successfully Added Product', {
         style: {
             border: '1px solid #FF8F49',
@@ -15,6 +19,7 @@ const AddProduct = () => {
     });
 
     const handleAddProduct = (e) => {
+        console.log(user);
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
@@ -108,7 +113,7 @@ const AddProduct = () => {
                                     </label>
                                     <input type="text"
                                         name="rating"
-                                        placeholder="Product detail" className="input lg:text-gray-300 bg-transparent border border-[#ff823485] text-lg" required />
+                                        placeholder="Product Rating" className="input lg:text-gray-300 bg-transparent border border-[#ff823485] text-lg" required />
                                 </div>
                             </div>
                             <div className="form-control">

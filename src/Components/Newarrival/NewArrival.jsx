@@ -14,7 +14,7 @@ const NewArrival = () => {
                     data-aos-mirror="true"
                     data-aos-once="false"
                     data-aos-anchor-placement="right"
-                className="card card-compact  bg-base-100 border-2 hover:border-b-[#ff8234] transition duration-300 ease-in-out hover:scale-110">
+                className="card card-compact  bg-base-100  shadow-[0_0_70px_#00000028]  hover:shadow-[#FF7E38C6] duration-300 ">
                     <figure><img src="https://i.ibb.co/bQ8c0kY/mockup-free-ikg-P7-AQs2r4-unsplash.jpg" className="h-[390px]" alt="Shoes" /></figure>
                     <div className="card-body">
                         <div className=" badge bg-[#ff8234] flex">NEW</div>
@@ -31,7 +31,7 @@ const NewArrival = () => {
                     data-aos-mirror="true"
                     data-aos-once="false"
                     data-aos-anchor-placement="top"
-                className="card card-compact  bg-base-100 border-2 hover:border-b-[#ff8234]  transition duration-300 ease-in-out hover:scale-110">
+                className="card card-compact  bg-base-100 shadow-[0_0_70px_#00000028]  hover:shadow-[#FF7E38C6]   ">
                     <figure><img src="https://i.ibb.co/PGsLHQ7/samuel-angor-d-OHDjkz7-X3k-unsplash.jpg" className="h-[390px]" alt="Shoes" /></figure>
                     <div className="card-body">
                         <div className=" badge bg-[#ff8234] flex">NEW</div>
@@ -48,7 +48,7 @@ const NewArrival = () => {
                     data-aos-mirror="true"
                     data-aos-once="false"
                     data-aos-anchor-placement="left"
-                className="card card-compact  bg-base-100 border-2 hover:border-b-[#ff8234]  transition duration-300 ease-in-out hover:scale-110">
+                className="card card-compact  bg-base-100 shadow-[0_0_70px_#00000028] hover:shadow-[#FF7E38C6]   duration-300 ">
                     <figure><img src="https://i.ibb.co/6tfhpbh/emiliano-cicero-OKZqs-Vseko-unsplash.jpg" className="h-[390px]" alt="Shoes" /></figure>
                     <div className="card-body">
                         <div className=" badge bg-[#ff8234] flex">NEW</div>

@@ -14,8 +14,6 @@ const SignIn = () => {
     const [showP, setShowp] = useState(false);
     const [error, setError] = useState(null)
     const location = useLocation();
-    console.log(location);
-
 
     const handleSignIn = (e) => {
         e.preventDefault();

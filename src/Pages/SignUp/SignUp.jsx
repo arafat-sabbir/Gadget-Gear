@@ -85,7 +85,7 @@ const SignUp = () => {
                     data-aos-anchor-placement="right"
                     className="hero min-h-[80vh]">
                     <div className="hero-content flex-col gap-8  w-full ">
-                        <h1 className="text-5xl font-bold   text-[#ff823485]">Sign Up now!</h1>
+                        <h1 className="text-5xl font-bold   text-[#ff8234dc]">Sign Up now!</h1>
                         <div className="card backdrop-blur-3xl  w-1/2 bg-transparent pt-3">
                             <div className="card-body">
                                 <form onSubmit={handleSubmit}>
