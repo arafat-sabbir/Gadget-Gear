@@ -5,14 +5,15 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAFUb5N8TjgVbA9Rfi0_M_Bhsl_ClHC31g",
-  authDomain: "electron-f1d41.firebaseapp.com",
-  projectId: "electron-f1d41",
-  storageBucket: "electron-f1d41.appspot.com",
-  messagingSenderId: "773032823092",
-  appId: "1:773032823092:web:d8ad570723466577f17d61"
+  apiKey: "AIzaSyDjH89uS7g7FbusqjctrEtNNQn44mFm0Oo",
+  authDomain: "gadget-gear-hub.firebaseapp.com",
+  projectId: "gadget-gear-hub",
+  storageBucket: "gadget-gear-hub.appspot.com",
+  messagingSenderId: "850885363276",
+  appId: "1:850885363276:web:3647e0730ec52141be56e9"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
 export default app;
