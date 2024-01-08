@@ -6,7 +6,7 @@ const Support = () => {
     AOS.init();
     return (
         <div className="container mx-auto my-20 p-4">
-            <h3 className="text-4xl font-semibold text-center">WELCOME TO GADGETGLADE SUPPORT. WE'RE HERE TO HELP.</h3>
+            <h3 className="text-4xl font-semibold text-center dark:text-red-500">WELCOME TO GADGETGLADE SUPPORT. WE'RE HERE TO HELP.</h3>
             <h3 className="text-2xl font-semibold text-center my-4 text-gray-400 mb-12">ALWAYS ON YOUR SIDE WHEN YOU NEED HELP</h3>
            <div className="lg:flex lg:gap-40 justify-center">
            <div data-aos="fade-right"
