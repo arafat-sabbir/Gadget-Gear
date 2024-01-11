@@ -5,7 +5,23 @@
   letter-spacing: 0.025em !important;
   scroll-behavior: smooth !important;
 }
-
+.active{
+  background: transparent !important;
+  scale: 110% !important;
+  transition: all;
+  transition-duration: 0.5s;
+  color: #ff8234!important;
+  font-weight: 700 !important;
+}
+ul > li :hover{
+  background: transparent !important;
+  scale: 110%;
+  transition: color,scale;
+  transition-duration: 300ms !important;
+  color: #ff8234 !important;
+  font-weight: 700 !important;
+  border-radius: 50px !important;
+}
 
 @tailwind base;
 @tailwind components;

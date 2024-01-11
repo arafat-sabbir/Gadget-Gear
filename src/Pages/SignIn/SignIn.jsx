@@ -1,15 +1,14 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { GoEye, GoEyeClosed } from "react-icons/go";
 import { FcGoogle } from "react-icons/fc";
 import { Link, Navigate, useLocation } from "react-router-dom";
-import Navbar from "../../Components/Navbar/Navbar";
-import swal from "sweetalert";
-import AOS from "aos";
 import "aos/dist/aos.css";
-import { Context } from "../../Components/AuthProvider/AuthProvider";
+import useAuth from "../../Utility/Hooks/UseAuth/useAuth";
+import { IoHomeOutline } from "react-icons/io5";
+import GoogleSignIn from "../../Utility/GoogleSignIn/GoogleSignIn";
 
 const SignIn = () => {
-  const { signWithGoogle, user, signInUser } = useContext(Context);
+  const { signWithGoogle, user, signInUser } = useAuth()
   const [showP, setShowp] = useState(false);
   const [error, setError] = useState(null);
   const location = useLocation();
@@ -20,11 +19,10 @@ const SignIn = () => {
     const email = form.get("email");
     const password = form.get("password");
     e.target.reset();
-
+// Sign Up With Email and Password Get the function from authProvider
     signInUser(email, password)
       .then((result) => {
         console.log(result);
-        swal("Great!", "Sign In SuccessFully", "success");
       })
       .catch((error) => {
         if (error.code === "auth/wrong-password") {
@@ -36,19 +34,20 @@ const SignIn = () => {
         }
       });
   };
+  // Handle Show And Hide Password
   const handleShowP = () => {
     setShowp(!showP);
   };
-  const handleGoogleSignin = () => {
-    signWithGoogle()
-      .then(() => {
-        swal("Great!", "Sign In SuccessFully", "success");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-  AOS.init();
+  // Handle Google Sign In 
+  // const handleGoogleSignin = () => {
+  //   signWithGoogle()
+  //     .then(() => {
+  //       swal("Great!", "Sign In SuccessFully", "success");
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
   return (
     <>
       <div className="h-screen my-auto w-screen mx-auto">
@@ -56,31 +55,32 @@ const SignIn = () => {
           <h1 className="text-5xl font-semibold leading-3 tracking-widest">
             Welcome Back
           </h1>
+          <Link to={'/'} className="text-xl font-semibold absolute  left-72 top-10"> <span className="flex  gap-2 hover:text-main duration-300 transition-all justify-center items-center">  <IoHomeOutline size={26}/> Go Home</span> </Link>
           <div className="card  w-1/3   pt-3  bg-transparent">
             <div className="card-body">
               <form onSubmit={handleSignIn}>
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text text-white">Email</span>
+                    <span className="label-text text-black">Email</span>
                   </label>
                   <input
                     type="emil"
                     name="email"
                     placeholder="Email"
-                    className="input rounded-sm bg-transparent text-white border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
+                    className="input rounded-sm bg-transparent text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
                     required
                   />
                 </div>
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text text-white">Password</span>
+                    <span className="label-text text-black">Password</span>
                   </label>
                   <div className="form-control relative">
                     <input
                       type={showP ? "text" : "password"}
                       name="password"
                       placeholder="Password"
-                      className="input rounded-sm bg-transparent text-white border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
+                      className="input rounded-sm bg-transparent text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
                       required
                     />
                     <span
@@ -109,11 +109,7 @@ const SignIn = () => {
                   </Link>
                 </p>
               </div>
-              <button onClick={handleGoogleSignin} className="">
-                <span className="flex justify-center items-center gap-6 text-xl border py-2 border-gray-500 rounded-sm">
-                  <FcGoogle></FcGoogle>Sign In With Google
-                </span>
-              </button>
+              <GoogleSignIn></GoogleSignIn>
             </div>
           </div>
         </div>

@@ -1,37 +1,40 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { GoEye, GoEyeClosed } from "react-icons/go";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import toast from "react-hot-toast";
-import { Context } from "../../Components/AuthProvider/AuthProvider";
+import useAuth from "../../Utility/Hooks/UseAuth/useAuth";
+import { IoHomeOutline } from "react-icons/io5";
+import GoogleSignIn from "../../Utility/GoogleSignIn/GoogleSignIn";
 
 const SignUp = () => {
+  // Regex Pattern For Validation Passwords
   const correctPassPatern = /^(?=.*[A-Z])(?=.*[\W_]).{6,}$/;
-  const navigate = useNavigate()
-  const location = useLocation()
+  const navigate = useNavigate();
+  const location = useLocation();
   const [showP, setShowp] = useState(false);
   const [error, setError] = useState("");
-
+  // Get the Auth related Function From Use Auth Hooks
   const { signWithGoogle, signUpUser, updateUserProfile, signOutUser } =
-    useContext(Context);
+    useAuth();
   const handleShowP = () => {
     setShowp(!showP);
   };
-  const handleGoogleSignin = () => {
-    const toastId = toast.loading("Sign In Processing...");
-    signWithGoogle()
-      .then(() => {
-        toast.success("Signed In Successfully", { id: toastId });
-        
-        navigate(location.state?location.state:'/')
-      })
-      .catch((error) => {
-        toast.error(error.message, {id: toastId});
-      });
-  };
+  // const handleGoogleSignin = () => {
+  //   const toastId = toast.loading("Sign In Processing...");
+  //   signWithGoogle()
+  //     .then(() => {
+  //       toast.success("Signed In Successfully", { id: toastId });
+
+  //       navigate(location.state ? location.state : "/");
+  //     })
+  //     .catch((error) => {
+  //       toast.error(error.message, { id: toastId });
+  //     });
+  // };
   const handleSubmit = (e) => {
     e.preventDefault();
-    const toast = toast.loading("Signing Up...")
+    const toast = toast.loading("Signing Up...");
     const form = new FormData(e.currentTarget);
     const name = form.get("name");
     const photoUrl = form.get("photoUrl");
@@ -49,9 +52,9 @@ const SignUp = () => {
     signUpUser(email, password)
       .then((result) => {
         e.target.reset();
-        toast.success("Sign Up Successfull.")
+        toast.success("Sign Up Successfull.");
         setError("");
-        navigate(location.state?location.state:'/')
+        navigate(location.state ? location.state : "/");
         updateUserProfile(name, photoUrl)
           .then((result) => {
             console.log(result);
@@ -71,31 +74,32 @@ const SignUp = () => {
         <h1 className="text-5xl font-semibold leading-3 tracking-widest">
           Sign Up Now
         </h1>
+        <Link to={'/'} className="text-xl font-semibold absolute  left-72 top-10"> <span className="flex  gap-2 hover:text-main duration-300 transition-all justify-center items-center">  <IoHomeOutline size={26}/> Go Home</span> </Link>
         <div className="card  lg:w-1/3 bg-transparent pt-3">
           <div className="card-body">
             <form onSubmit={handleSubmit}>
               <div className="flex gap-4">
                 <div className="form-control w-full">
                   <label className="label">
-                    <span className="label-text text-white">Name</span>
+                    <span className="label-text text-black">Name</span>
                   </label>
                   <input
                     type="text"
                     name="name"
                     placeholder="Your name"
-                    className="input rounded-sm bg-transparent text-white border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
+                    className="input rounded-sm bg-transparent text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
                     required
                   />
                 </div>
                 <div className="form-control w-full">
                   <label className="label">
-                    <span className="label-text text-white">Photo url</span>
+                    <span className="label-text text-black">Photo url</span>
                   </label>
                   <input
                     type="text"
                     name="photoUrl"
                     placeholder="Photo url"
-                    className="input rounded-sm  bg-transparent text-white border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
+                    className="input rounded-sm  bg-transparent text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
                     required
                   />
                 </div>
@@ -103,26 +107,26 @@ const SignUp = () => {
               <div className="flex gap-4">
                 <div className="form-control w-full">
                   <label className="label">
-                    <span className="label-text text-white">Email</span>
+                    <span className="label-text text-black">Email</span>
                   </label>
                   <input
                     type="emil"
                     name="email"
                     placeholder="Email"
-                    className="input rounded-sm  bg-transparent text-white border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
+                    className="input rounded-sm  bg-transparent text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
                     required
                   />
                 </div>
                 <div className="form-control w-full">
                   <label className="label">
-                    <span className="label-text text-white">Password</span>
+                    <span className="label-text text-black">Password</span>
                   </label>
                   <div className="form-control relative">
                     <input
                       type={showP ? "text" : "password"}
                       name="password"
                       placeholder="Password"
-                      className="input rounded-sm bg-transparent text-white border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
+                      className="input rounded-sm bg-transparent text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
                       required
                     />
                     <div className="my-1 text-red-400 font-medium">
@@ -155,11 +159,7 @@ const SignUp = () => {
                 </Link>
               </p>
             </div>
-            <button onClick={handleGoogleSignin} className="">
-              <span className="flex justify-center items-center gap-6 text-xl border py-2 border-gray-500 rounded-sm">
-                <FcGoogle></FcGoogle>Sign Up With Google
-              </span>
-            </button>
+            <GoogleSignIn></GoogleSignIn>
           </div>
         </div>
       </div>
