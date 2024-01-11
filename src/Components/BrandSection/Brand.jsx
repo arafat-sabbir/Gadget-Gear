@@ -10,13 +10,13 @@ const Brand = () => {
   }, []);
   return (
     <div className="container mx-auto my-12">
-      <h3 className="text-4xl text-center text-[#ff8234] font-semibold mb-6">
-        Search By Brand
+      <h3 className="text-5xl tracking-widest  text-center text-[#ff8234] font-semibold mb-6">
+        Choose By Brand
       </h3>
       <div
         className={
           brands
-            ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center p-4 "
+            ? "grid grid-cols-1 md:grid-cols-2 mt-20 lg:grid-cols-3 gap-12 justify-items-center p-4 "
             : ""
         }
       >

@@ -1,38 +1,23 @@
 import { useLoaderData } from "react-router-dom";
-import Navbar from "../../Components/Navbar/Navbar";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { BsCart2 } from "react-icons/bs";
-import toast, { Toaster } from "react-hot-toast";
 import { useContext } from "react";
 import { Context } from "../../Components/AuthProvider/AuthProvider";
+import toast from "react-hot-toast";
+import axios from "axios";
 
 const DetailProduct = () => {
   const { user } = useContext(Context);
-  console.log(user);
-  console.log(user.email);
   const product = useLoaderData();
   const { image, name, brandName, price, rating, type, _id, description } =
     product;
   const userEmail = user.email;
 
   AOS.init();
-  const notify = () =>
-    toast.success("Successfully Added To Cart", {
-      style: {
-        border: "1px solid #FF8F49",
-        padding: "16px",
-        color: "#FF8F49",
-      },
-      iconTheme: {
-        primary: "#FF8F49",
-        secondary: "#FFFAEE",
-      },
-    });
   const handleAddToCart = (e) => {
+    const toastId = toast.loading("Product Adding To Cart")
     e.preventDefault();
-    console.log(user);
-    console.log(user.email);
     const Productinfo = {
       name,
       type,
@@ -44,21 +29,12 @@ const DetailProduct = () => {
       productId: _id,
       userEmail,
     };
-    console.log(Productinfo);
 
     // add to backend
-    fetch(`https://gadgetgear-server.vercel.app/cart/`, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(Productinfo),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.acknowledged) {
-          notify();
-          console.log(data);
+    axios.post('https://gadgetgear-server.vercel.app/cart/',Productinfo)
+    .then((data) => {
+        if (data.data.acknowledged) {
+          toast.success("Product added Successfully",{id:toastId})
         }
       });
   };
