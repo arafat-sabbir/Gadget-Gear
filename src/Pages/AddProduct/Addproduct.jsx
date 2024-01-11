@@ -58,7 +58,6 @@ const AddProduct = () => {
 
   return (
     <>
-      <Navbar></Navbar>
       <div className="hero h-[86vh]  bg-transparent ">
         <div className="hero-content flex-col  w-full">
           <div className="text-center">
@@ -184,7 +183,6 @@ const AddProduct = () => {
             </form>
           </div>
         </div>
-        <Toaster></Toaster>
       </div>
     </>
   );

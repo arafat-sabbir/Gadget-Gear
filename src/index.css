@@ -4,17 +4,12 @@
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 0.025em !important;
   scroll-behavior: smooth !important;
-  overflow-x: hidden;
 }
 
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* body{
-  background-image: url('https://i.ibb.co/Khz54dJ/tyler-casey-bs-Jc2kf4ds-unsplash.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
+
 
 

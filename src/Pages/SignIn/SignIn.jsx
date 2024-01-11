@@ -51,83 +51,76 @@ const SignIn = () => {
   AOS.init();
   return (
     <>
-      <div className="">
-        <div className="hero min-h-[100vh] my-auto">
-          <div className="hero-content flex-col gap-8">
-            <h1 className="text-5xl font-bold text-[#FF8234]">Sign In now!</h1>
-            <div className="card  w-96   pt-3 backdrop-blur-3xl bg-transparent">
-              <div className="card-body">
-                <form onSubmit={handleSignIn}>
-                  <div className="form-control">
-                    <label className="label">
-                      <span className="label-text text-white">Email</span>
-                    </label>
+      <div className="h-screen my-auto w-screen mx-auto">
+        <div className="flex flex-col justify-center items-center h-full">
+          <h1 className="text-5xl font-semibold leading-3 tracking-widest">
+            Welcome Back
+          </h1>
+          <div className="card  w-1/3   pt-3  bg-transparent">
+            <div className="card-body">
+              <form onSubmit={handleSignIn}>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text text-white">Email</span>
+                  </label>
+                  <input
+                    type="emil"
+                    name="email"
+                    placeholder="Email"
+                    className="input rounded-sm bg-transparent text-white border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
+                    required
+                  />
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text text-white">Password</span>
+                  </label>
+                  <div className="form-control relative">
                     <input
-                      type="emil"
-                      name="email"
-                      placeholder="email"
-                      className="input border border-[#ff823485] bg-transparent text-white"
+                      type={showP ? "text" : "password"}
+                      name="password"
+                      placeholder="Password"
+                      className="input rounded-sm bg-transparent text-white border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
                       required
                     />
+                    <span
+                      className="absolute top-4 text-black cursor-pointer right-2"
+                      onClick={handleShowP}
+                    >
+                      {showP ? <GoEye /> : <GoEyeClosed />}
+                    </span>
                   </div>
-                  <div className="form-control">
-                    <label className="label">
-                      <span className="label-text text-white">Password</span>
-                    </label>
-                    <div className="form-control relative">
-                      <input
-                        type={showP ? "text" : "password"}
-                        name="password"
-                        placeholder="password"
-                        className="input border border-[#ff823485] bg-transparent text-white"
-                        required
-                      />
-                      <span
-                        className="absolute top-4 text-gray-200 right-2"
-                        onClick={handleShowP}
-                      >
-                        {showP ? <GoEye /> : <GoEyeClosed />}
-                      </span>
-                    </div>
-                    <label className="label">
-                      <a
-                        href="#"
-                        className="label-text-alt text-gray-300 link link-hover"
-                      >
-                        Forgot password?
-                      </a>
-                    </label>
-                  </div>
-                  <div className="form-control mt-6">
-                    <button className="btn hover:bg-[#ff8234bd] bg-[#ff8234bd] border-none bg-opacity-80 font-semibold text-gray-200">
-                      Sign In
-                    </button>
-                  </div>
-                </form>
-                <div className="my-1 text-red-400 font-medium">
-                  {error && <p>Error : {error}</p>}
-                  <p className="my-4 text-gray-300">
-                    Do not have a account ? :{" "}
-                    <Link to={"/signUp"} className=" font-bold text-[#FF8234]">
-                      Sign Up
-                    </Link>
-                  </p>
                 </div>
-                <button
-                  onClick={handleGoogleSignin}
-                  className="btn z-50 border hover:border-[#ff823485] border-[#ff823485] hover:bg-transparent w-full bg-transparent text-gray-300 font-semibold mb-3"
-                >
-                  <FcGoogle></FcGoogle>
-                  Sign IN With Google
-                </button>
+                <div className="form-control mt-6">
+                  <button
+                    type="submit"
+                    className="border font-semibold  py-2 rounded-sm border-gray-500"
+                  >
+                    Sign In
+                  </button>
+                </div>
+              </form>
+              <div className="my-1 text-red-400 font-medium">
+                {error && <p>Error : {error}</p>}
+                <p className="my-4 text-black">
+                  Do not have a account ? :{" "}
+                  <Link to={"/signUp"} className=" font-bold text-[#FF8234]">
+                    Sign Up
+                  </Link>
+                </p>
               </div>
+              <button onClick={handleGoogleSignin} className="">
+                <span className="flex justify-center items-center gap-6 text-xl border py-2 border-gray-500 rounded-sm">
+                  <FcGoogle></FcGoogle>Sign In With Google
+                </span>
+              </button>
             </div>
           </div>
-          {user && (
-            <Navigate to={location?.state ? location.state : "/"}></Navigate>
-          )}
         </div>
       </div>
+      {user && (
+        <Navigate to={location?.state ? location.state : "/"}></Navigate>
+      )}
     </>
   );
 };

@@ -7,7 +7,6 @@ export default function ErrorPage() {
 
   return (
     <>
-    <Navbar></Navbar>
       <div className="flex items-center justify-center  h-[65vh]">
         <div className="px-4 lg:py-12">
           <div className="lg:gap-4 lg:flex">

@@ -49,7 +49,6 @@ const ProductDetail = () => {
 
   return (
     <div className="">
-      <Navbar></Navbar>
       <div>
         <h3 className="text-3xl font-semibold text-center -mt-6 my-6 text-white">
           Update This Product
