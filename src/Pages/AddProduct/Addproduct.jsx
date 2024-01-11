@@ -1,22 +1,10 @@
-import toast, { Toaster } from "react-hot-toast";
-import Navbar from "../../Components/Navbar/Navbar";
 import { useContext } from "react";
 import { Context } from "../../Components/AuthProvider/AuthProvider";
+import toast from "react-hot-toast";
+import axios from "axios";
 
 const AddProduct = () => {
   const { user } = useContext(Context);
-  const notify = () =>
-    toast.success("successfully Added Product", {
-      style: {
-        border: "1px solid #FF8F49",
-        padding: "16px",
-        color: "#FF8F49",
-      },
-      iconTheme: {
-        primary: "#FF8F49",
-        secondary: "#FFFAEE",
-      },
-    });
 
   const handleAddProduct = (e) => {
     console.log(user);
@@ -28,40 +16,32 @@ const AddProduct = () => {
     const brand = form.brand.value;
     const description = form.description.value;
     const rating = form.rating.value;
-    const photourl = form.photourl.value;
-    const Productinfo = {
+    const PhotoUrl = form.photourl.value;
+    const ProductInfo = {
       name,
       type,
       price,
       brandName: brand,
       description,
       rating,
-      image: photourl,
+      image: PhotoUrl,
     };
-    console.log(Productinfo);
+    console.log(ProductInfo);
     // add to backend
-    fetch("https://gadgetgear-server.vercel.app/product", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(Productinfo),
-    })
-      .then((res) => res.json())
+    axios.post("/https://gadgetgear-server.vercel.app/product",ProductInfo)
       .then((data) => {
-        console.log(data);
-        if (data.acknowledged) {
-          notify();
+        if (data.data.acknowledged) {
+          toast.success("Product Added Successfully")
         }
       });
   };
 
   return (
     <>
-      <div className="hero h-[86vh]  bg-transparent ">
+      <div className="hero min-h-[calc(100vh-309px)]   ">
         <div className="hero-content flex-col  w-full">
           <div className="text-center">
-            <h1 className=" text-[#FF8234] text-5xl font-bold">ADD Product!</h1>
+            <h1 className=" text-[#FF8234] text-5xl font-bold tracking-widest mt-6 lg:mt-0">ADD Product!</h1>
           </div>
           <div className="card flex-shrink-0 w-full -2xl bg-transparent backdrop-blur-lg rounded-lg ">
             <form onSubmit={handleAddProduct} className="card-body">
@@ -69,7 +49,7 @@ const AddProduct = () => {
               <div className="md:flex gap-4">
                 <div className="form-control md:w-1/2">
                   <label className="label">
-                    <span className="label-text text-lg lg:text-gray-300">
+                    <span className="label-text text-lg lg:text-black">
                       Product Name
                     </span>
                   </label>
@@ -77,13 +57,13 @@ const AddProduct = () => {
                     type="text"
                     name="name"
                     placeholder="Product name"
-                    className="input lg:text-gray-300 bg-transparent border border-[#ff823488]  text-lg"
+                    className="input rounded-sm bg-transparent text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
                     required
                   />
                 </div>
                 <div className="form-control md:w-1/2">
                   <label className="label">
-                    <span className="label-text text-lg lg:text-gray-300">
+                    <span className="label-text text-lg lg:text-black">
                       Photo Url
                     </span>
                   </label>
@@ -91,7 +71,7 @@ const AddProduct = () => {
                     type="text"
                     name="photourl"
                     placeholder="Photo Url"
-                    className="input lg:text-gray-300 bg-transparent border border-[#ff823485] text-lg"
+                    className="input rounded-sm bg-transparent text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
                     required
                   />
                 </div>
@@ -100,7 +80,7 @@ const AddProduct = () => {
               <div className="md:flex gap-4">
                 <div className="form-control w-full">
                   <label className="label">
-                    <span className="label-text text-lg lg:text-gray-300">
+                    <span className="label-text text-lg lg:text-black">
                       Product Type
                     </span>
                   </label>
@@ -108,13 +88,13 @@ const AddProduct = () => {
                     type="text"
                     name="type"
                     placeholder="Product Type"
-                    className="input lg:text-gray-300 bg-transparent border border-[#ff823485] text-lg"
+                    className="input rounded-sm bg-transparent text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
                     required
                   />
                 </div>
                 <div className="form-control w-full">
                   <label className="label">
-                    <span className="label-text text-lg lg:text-gray-300">
+                    <span className="label-text text-lg lg:text-black">
                       Product Price
                     </span>
                   </label>
@@ -122,7 +102,7 @@ const AddProduct = () => {
                     type="text"
                     name="price"
                     placeholder="Enter Product Price"
-                    className="input lg:text-gray-300 bg-transparent border border-[#ff823485] text-lg"
+                    className="input rounded-sm bg-transparent text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
                     required
                   />
                 </div>
@@ -131,7 +111,7 @@ const AddProduct = () => {
               <div className="md:flex gap-4">
                 <div className="form-control md:w-1/2">
                   <label className="label">
-                    <span className="label-text text-lg lg:text-gray-300">
+                    <span className="label-text text-lg lg:text-black">
                       Brand Name
                     </span>
                   </label>
@@ -139,13 +119,13 @@ const AddProduct = () => {
                     type="text"
                     name="brand"
                     placeholder="Brand Name"
-                    className="input lg:text-gray-300 bg-transparent border border-[#ff823485] text-lg"
+                    className="input rounded-sm bg-transparent text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
                     required
                   />
                 </div>
                 <div className="form-control md:w-1/2">
                   <label className="label">
-                    <span className="label-text text-lg lg:text-gray-300">
+                    <span className="label-text text-lg lg:text-black">
                       Product Rating
                     </span>
                   </label>
@@ -153,14 +133,14 @@ const AddProduct = () => {
                     type="text"
                     name="rating"
                     placeholder="Product Rating"
-                    className="input lg:text-gray-300 bg-transparent border border-[#ff823485] text-lg"
+                    className="input rounded-sm bg-transparent text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
                     required
                   />
                 </div>
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text text-lg lg:text-gray-300">
+                  <span className="label-text text-lg lg:text-black">
                     Short Description
                   </span>
                 </label>
@@ -168,7 +148,7 @@ const AddProduct = () => {
                   type="text"
                   name="description"
                   placeholder="Enter Short Description"
-                  className="input bg-transparent lg:text-gray-300 border border-[#ff823485] text-lg"
+                  className="input rounded-sm bg-transparent text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
                   required
                 />
               </div>
@@ -177,7 +157,7 @@ const AddProduct = () => {
                 <input
                   type="submit"
                   value="Add Product"
-                  className="btn text-gray-200 border-none hover:bg-[#ff8234b4] bg-[#ff8234be]"
+                  className="border font-semibold  py-2 rounded-sm border-gray-500"
                 />
               </div>
             </form>

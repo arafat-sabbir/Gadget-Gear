@@ -5,7 +5,7 @@ const WhyUs = () => {
   AOS.init();
   return (
     <div>
-      <div className="flex  items-center justify-center">
+      <div className="flex  items-center justify-center ">
         <p className="text-5xl font-semibold tracking-widest ">Why Choose us</p>
       </div>
       <div className="container mx-auto items-center flex flex-col lg:flex-row gap-20 lg:gap-4 ">
@@ -39,15 +39,7 @@ const WhyUs = () => {
             </div>
           </div>
         </div>
-        <div
-          data-aos="fade-left"
-          data-aos-offset="200"
-          data-aos-duration="2000"
-          data-aos-mirror="true"
-          data-aos-once="false"
-          data-aos-anchor-placement="left"
-          className="w-1/2 my-12 lg:my-auto "
-        >
+        <div className="w-1/2 my-12 lg:my-auto ">
           <img
             src="https://i.ibb.co/SNvh6rT/banner.jpg"
             className="mx-auto"

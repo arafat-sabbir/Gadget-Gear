@@ -18,7 +18,7 @@ const GoogleSignIn = () => {
           userName: res.user.displayName,
           userRole: "user",
         };
-        axios.post("http://localhost:5001/createUser", userData)
+        axios.post("https://gadgetgear-server.vercel.app/createUser", userData)
         .then(res=>{
           console.log(res.data);
         })

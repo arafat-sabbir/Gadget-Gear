@@ -36,7 +36,6 @@ const ProductDetail = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.modifiedCount > 0) {
           Swal.fire(
             "Great!",
@@ -78,11 +77,12 @@ const ProductDetail = () => {
       <div className="hero  bg-transparent ">
         <div className="hero-content flex-col  w-full">
           <div className="card flex-shrink-0 w-full  bg-transparent backdrop-blur-lg rounded-lg ">
+            {/* Update Product form */}
             <form onSubmit={handleUpdateProduct} className="card-body">
               <div className="md:flex gap-4">
                 <div className="form-control md:w-1/2">
                   <label className="label">
-                    <span className="label-text text-lg text-gray-300">
+                    <span className="label-text text-lg text-black">
                       Product Name
                     </span>
                   </label>
@@ -91,13 +91,13 @@ const ProductDetail = () => {
                     name="name"
                     placeholder="Product name"
                     defaultValue={name}
-                    className="input text-gray-300 bg-transparent border border-[#ff823488]  text-lg"
+                    className="input rounded-sm bg-transparent text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
                     required
                   />
                 </div>
                 <div className="form-control md:w-1/2">
                   <label className="label">
-                    <span className="label-text text-lg text-gray-300">
+                    <span className="label-text text-lg text-black">
                       Photo Url
                     </span>
                   </label>
@@ -106,7 +106,7 @@ const ProductDetail = () => {
                     name="photourl"
                     defaultValue={image}
                     placeholder="Photo Url"
-                    className="input text-gray-300 bg-transparent border border-[#ff823485] text-lg"
+                    className="input rounded-sm bg-transparent text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
                     required
                   />
                 </div>
@@ -114,7 +114,7 @@ const ProductDetail = () => {
               <div className="md:flex gap-4">
                 <div className="form-control w-full">
                   <label className="label">
-                    <span className="label-text text-lg text-gray-300">
+                    <span className="label-text text-lg text-black">
                       Product Type
                     </span>
                   </label>
@@ -123,13 +123,13 @@ const ProductDetail = () => {
                     defaultValue={type}
                     name="type"
                     placeholder="Product Type"
-                    className="input text-gray-300 bg-transparent border border-[#ff823485] text-lg"
+                    className="input rounded-sm bg-transparent text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
                     required
                   />
                 </div>
                 <div className="form-control w-full">
                   <label className="label">
-                    <span className="label-text text-lg text-gray-300">
+                    <span className="label-text text-lg text-black">
                       Product Price
                     </span>
                   </label>
@@ -138,7 +138,7 @@ const ProductDetail = () => {
                     defaultValue={price}
                     name="price"
                     placeholder="Enter Product Price"
-                    className="input text-gray-300 bg-transparent border border-[#ff823485] text-lg"
+                    className="input rounded-sm bg-transparent text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
                     required
                   />
                 </div>
@@ -146,7 +146,7 @@ const ProductDetail = () => {
               <div className="md:flex gap-4">
                 <div className="form-control md:w-1/2">
                   <label className="label">
-                    <span className="label-text text-lg text-gray-300">
+                    <span className="label-text text-lg text-black">
                       Brand Name
                     </span>
                   </label>
@@ -155,13 +155,13 @@ const ProductDetail = () => {
                     defaultValue={brandName}
                     name="brand"
                     placeholder="Brand Name"
-                    className="input text-gray-300 bg-transparent border border-[#ff823485] text-lg"
+                    className="input rounded-sm bg-transparent text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
                     required
                   />
                 </div>
                 <div className="form-control md:w-1/2">
                   <label className="label">
-                    <span className="label-text text-lg text-gray-300">
+                    <span className="label-text text-lg text-black">
                       Product Rating
                     </span>
                   </label>
@@ -170,14 +170,14 @@ const ProductDetail = () => {
                     name="rating"
                     defaultValue={rating}
                     placeholder="Product detail"
-                    className="input text-gray-300 bg-transparent border border-[#ff823485] text-lg"
+                    className="input rounded-sm bg-transparent text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
                     required
                   />
                 </div>
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text text-lg text-gray-300">
+                  <span className="label-text text-lg text-black">
                     Short Description
                   </span>
                 </label>
@@ -185,7 +185,7 @@ const ProductDetail = () => {
                   type="text"
                   name="description"
                   placeholder="Enter Short Description"
-                  className="input bg-transparent text-gray-300 border border-[#ff823485] text-lg"
+                  className="input rounded-sm bg-transparent text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
                   defaultValue={description}
                 />
               </div>
@@ -194,7 +194,7 @@ const ProductDetail = () => {
                 <input
                   type="submit"
                   value="Update"
-                  className="btn text-gray-200 border-none hover:bg-[#ff8234b4] bg-[#ff8234be]"
+                  className="border font-semibold  py-2 rounded-sm border-gray-500"
                 />
               </div>
             </form>

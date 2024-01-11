@@ -103,7 +103,7 @@ const SignIn = () => {
               <div className="my-1 text-red-400 font-medium">
                 {error && <p>Error : {error}</p>}
                 <p className="my-4 text-black">
-                  Do not have a account ? :{" "}
+                  Do not have a account ? {" "}
                   <Link to={"/signUp"} className=" font-bold text-[#FF8234]">
                     Sign Up
                   </Link>

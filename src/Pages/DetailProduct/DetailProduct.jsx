@@ -2,21 +2,29 @@ import { useLoaderData } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { BsCart2 } from "react-icons/bs";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Context } from "../../Components/AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
 import axios from "axios";
+import useUserinfo from "../../Utility/Hooks/userUserInfo/useUserinfo";
 
 const DetailProduct = () => {
   const { user } = useContext(Context);
+  const { userInfo } = useUserinfo();
   const product = useLoaderData();
   const { image, name, brandName, price, rating, type, _id, description } =
     product;
   const userEmail = user.email;
 
   AOS.init();
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
   const handleAddToCart = (e) => {
-    const toastId = toast.loading("Product Adding To Cart")
+    const toastId = toast.loading("Product Adding To Cart");
     e.preventDefault();
     const Productinfo = {
       name,
@@ -31,10 +39,11 @@ const DetailProduct = () => {
     };
 
     // add to backend
-    axios.post('https://gadgetgear-server.vercel.app/cart/',Productinfo)
-    .then((data) => {
+    axios
+      .post("https://gadgetgear-server.vercel.app/cart/", Productinfo)
+      .then((data) => {
         if (data.data.acknowledged) {
-          toast.success("Product added Successfully",{id:toastId})
+          toast.success("Product added Successfully", { id: toastId });
         }
       });
   };
@@ -85,12 +94,17 @@ const DetailProduct = () => {
                 <h3 className="text-2xl font-semibold text-gray-700 mb-2">
                   Price : ${price}
                 </h3>
-                <button
-                  className="btn btn-wide bg-[#FF8F49] hover:bg-[#FF8F49]"
-                  onClick={handleAddToCart}
-                >
-                  Add To <BsCart2></BsCart2>
-                </button>
+                {userInfo?.userRole !== "admin" && (
+                  <button
+                    className="border font-semibold  py-2 px-10 rounded-sm border-gray-500"
+                    onClick={handleAddToCart}
+                  >
+                    <span className="flex justify-center items-center gap-2">
+                      {" "}
+                      Add To <BsCart2 size={20}></BsCart2>
+                    </span>
+                  </button>
+                )}
               </div>
             </div>
           </div>

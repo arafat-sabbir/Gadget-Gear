@@ -13,7 +13,7 @@ const useUserinfo = () => {
     queryKey: ["useInfo", user],
     queryFn: async () => {
       const response = await axios.get(
-        `http://localhost:5001/getUser?userEmail=${user.email}`
+        `https://gadgetgear-server.vercel.app/getUser?userEmail=${user.email}`
       );
       return response.data;
     },

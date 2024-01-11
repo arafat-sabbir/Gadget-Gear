@@ -12,7 +12,7 @@ const Support = () => {
         ALWAYS ON YOUR SIDE WHEN YOU NEED HELP
       </h3>
       <div className="lg:flex lg:gap-40 justify-center">
-        <div className="flex lg:w-4/12 mb-4 bg-[#d1ecfd9d] lg:mb-0 h-[300px] shadow-[0_0_70px_#00000028]  hover:shadow-[#FF7E38C6] rounded-2xl duration-300">
+        <div className="flex lg:w-4/12 mb-4 bg-[#d1ecfd9d] px-10 lg:mb-0 h-[300px] hover:shadow-[0_0_70px_]   rounded-sm duration-300">
           <div className="flex items-center gap-4">
             <img
               src="https://i.ibb.co/DMVbtbz/phone-icn.png"
@@ -27,7 +27,7 @@ const Support = () => {
             </div>
           </div>
         </div>
-        <div className="flex bg-[#DFE7FD] lg:w-4/12 h-[300px] shadow-[0_0_70px_#00000028]  hover:shadow-[#FF7E38C6] rounded-2xl duration-300 ">
+        <div className="flex bg-[#DFE7FD] lg:w-4/12 h-[300px] px-10 hover:shadow-[0_0_70px_]   rounded-sm duration-300 ">
           <div className="flex items-center gap-4">
             <img
               src="https://i.ibb.co/0ccvVwz/chat-icn.png"

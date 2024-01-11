@@ -153,7 +153,7 @@ const SignUp = () => {
             </form>
             <div>
               <p className="my-4  text-black font-medium">
-                Do not have a account ? please :{" "}
+                Do not have a account ?  {" "}
                 <Link to={"/signIn"} className=" font-bold text-main">
                   Sign In
                 </Link>
