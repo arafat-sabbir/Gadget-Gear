@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const NewArrival = () => {
   return (
     <div className="container mx-auto mb-28 p-4">
-      <h3 className="text-5xl tracking-widest my-20 font-semibold text-center  text-[#ff8234]">
+      <h3 className="md:text-5xl text-4xl  tracking-widest my-20 font-semibold text-center  text-[#ff8234]">
         Newly Arrived
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-4 gap-6 lg:gap-20">

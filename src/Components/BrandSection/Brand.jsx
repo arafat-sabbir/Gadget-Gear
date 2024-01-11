@@ -10,7 +10,7 @@ const Brand = () => {
   }, []);
   return (
     <div className="container mx-auto my-12">
-      <h3 className="text-5xl tracking-widest  text-center text-[#ff8234] font-semibold mb-6">
+      <h3 className="md:text-5xl text-4xl tracking-widest  text-center text-[#ff8234] font-semibold mb-6">
         Choose By Brand
       </h3>
       <div

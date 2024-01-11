@@ -12,7 +12,7 @@ const Product = ({ product, handleDelete }) => {
 
   return (
     <div>
-      <div className="card md:card-side rounded-md bg-base-100 border-2 hover:border-r-[#FF8234]  w-[90vw] lg:w-auto  md:w-[90vw] mx-auto">
+      <div className="card md:card-side rounded-lg bg-base-100 border-2 hover:border-r-[#FF8234]  w-[90vw] lg:w-auto  md:w-[90vw] mx-auto">
         <figure>
           <img
             src={image}

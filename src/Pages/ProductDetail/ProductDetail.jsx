@@ -49,10 +49,10 @@ const ProductDetail = () => {
   return (
     <div className="">
       <div>
-        <h3 className="text-3xl font-semibold text-center -mt-6 my-6 text-white">
+        <h3 className="md:text-4xl text-3xl tracking-widest font-semibold text-center mt-6 text-black">
           Update This Product
         </h3>
-        <div className="card md:card-side bg-transparent backdrop-blur-sm text-white drop-shadow-3xl w-[90vw]   md:w-[50vw] mx-auto">
+        <div className="card md:card-side shadow-2xl text-black drop-shadow-3xl w-[90vw]   lg:w-[40vw] mt-10 mx-auto">
           <figure>
             <img
               src={image}
@@ -74,9 +74,9 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
-      <div className="hero  bg-transparent ">
+      <div className="hero  ">
         <div className="hero-content flex-col  w-full">
-          <div className="card flex-shrink-0 w-full  bg-transparent backdrop-blur-lg rounded-lg ">
+          <div className="card flex-shrink-0 w-full  rounded-sm ">
             {/* Update Product form */}
             <form onSubmit={handleUpdateProduct} className="card-body">
               <div className="md:flex gap-4">
@@ -91,7 +91,7 @@ const ProductDetail = () => {
                     name="name"
                     placeholder="Product name"
                     defaultValue={name}
-                    className="input rounded-sm bg-transparent text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
+                    className="input rounded-sm text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
                     required
                   />
                 </div>
@@ -106,7 +106,7 @@ const ProductDetail = () => {
                     name="photourl"
                     defaultValue={image}
                     placeholder="Photo Url"
-                    className="input rounded-sm bg-transparent text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
+                    className="input rounded-sm text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
                     required
                   />
                 </div>
@@ -123,7 +123,7 @@ const ProductDetail = () => {
                     defaultValue={type}
                     name="type"
                     placeholder="Product Type"
-                    className="input rounded-sm bg-transparent text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
+                    className="input rounded-sm text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
                     required
                   />
                 </div>
@@ -138,7 +138,7 @@ const ProductDetail = () => {
                     defaultValue={price}
                     name="price"
                     placeholder="Enter Product Price"
-                    className="input rounded-sm bg-transparent text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
+                    className="input rounded-sm text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
                     required
                   />
                 </div>
@@ -155,7 +155,7 @@ const ProductDetail = () => {
                     defaultValue={brandName}
                     name="brand"
                     placeholder="Brand Name"
-                    className="input rounded-sm bg-transparent text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
+                    className="input rounded-sm text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
                     required
                   />
                 </div>
@@ -170,7 +170,7 @@ const ProductDetail = () => {
                     name="rating"
                     defaultValue={rating}
                     placeholder="Product detail"
-                    className="input rounded-sm bg-transparent text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
+                    className="input rounded-sm text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
                     required
                   />
                 </div>
@@ -185,7 +185,7 @@ const ProductDetail = () => {
                   type="text"
                   name="description"
                   placeholder="Enter Short Description"
-                  className="input rounded-sm bg-transparent text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
+                  className="input rounded-sm text-black border border-gray-500 focus:ring-0 focus:outline-none focus:border-main"
                   defaultValue={description}
                 />
               </div>
@@ -194,7 +194,7 @@ const ProductDetail = () => {
                 <input
                   type="submit"
                   value="Update"
-                  className="border font-semibold  py-2 rounded-sm border-gray-500"
+                  className="border font-semibold cursor-pointer hover:scale-95 duration-300  py-2 rounded-sm border-gray-500"
                 />
               </div>
             </form>
