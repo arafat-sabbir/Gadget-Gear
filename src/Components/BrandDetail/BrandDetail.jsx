@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 
 const BrandDetail = ({ brand }) => {
-    const { brandname, image, id } = brand
+    const { brandname, image } = brand
 
     return (
         <div>

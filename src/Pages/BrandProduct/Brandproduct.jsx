@@ -1,15 +1,12 @@
 import { useLoaderData } from "react-router-dom";
-import Navbar from "../../Components/Navbar/Navbar";
 import Product from "../Product/Product";
 import { useState } from "react";
 import swal from "sweetalert";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import AOS from "aos";
 import "aos/dist/aos.css";
 import { Pagination } from "swiper/modules";
-import Footer from "../../Components/Footer/Footer";
 
 const Brandproduct = () => {
   const loadedproducts = useLoaderData();
@@ -37,7 +34,6 @@ const Brandproduct = () => {
         });
     }
   };
-  AOS.init();
   return (
     <div>
       <div className="container mx-auto">
@@ -108,12 +104,6 @@ const Brandproduct = () => {
         {/* swiper js */}
 
         <div
-          data-aos="fade-down"
-          data-aos-offset="200"
-          data-aos-duration="1500"
-          data-aos-mirror="true"
-          data-aos-once="false"
-          data-aos-anchor-placement="top"
           className={`${
             loadedproducts.length
               ? "grid grid-cols-1  my-20 lg:grid-cols-2 gap-8 mx-auto justify-center"
@@ -129,6 +119,7 @@ const Brandproduct = () => {
               ></Product>
             ))
           ) : (
+            // If no product available show this 
             <div>
               <img
                 src="https://i.ibb.co/gTSPFgD/icons8-unavailable-500.png"

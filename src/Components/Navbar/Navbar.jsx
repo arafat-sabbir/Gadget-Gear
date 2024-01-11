@@ -1,11 +1,11 @@
-import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Context } from "../AuthProvider/AuthProvider";
-import { BsCart2 } from "react-icons/bs";
 import useAuth from "../../Utility/Hooks/UseAuth/useAuth";
+import useUserinfo from "../../Utility/Hooks/userUserInfo/useUserinfo";
 
 const Navbar = () => {
   const { user, signOutUser } = useAuth();
+  const { userInfo } = useUserinfo();
+  console.log(userInfo);
   // Handle Sign Out User
   const handleSignOut = () => {
     signOutUser()
@@ -22,12 +22,16 @@ const Navbar = () => {
       <li>
         <NavLink to={"/"}>Home</NavLink>
       </li>
-      <li>
+      {
+        userInfo?.userRole=="admin" &&<li>
         <NavLink to={"/addProduct"}>Add Product</NavLink>
       </li>
-      <li>
-        <NavLink to={"/myCart"}>My Cart</NavLink>
-      </li>
+      }
+     {
+      userInfo?.userRole=="user" && <li>
+      <NavLink to={"/myCart"}>My Cart</NavLink>
+    </li>
+     }
     </>
   );
   return (
