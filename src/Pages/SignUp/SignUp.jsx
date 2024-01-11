@@ -76,123 +76,105 @@ const SignUp = () => {
       });
   };
   return (
-    <div className="">
-      <Navbar></Navbar>
-      <div>
-        <div
-          data-aos="zoom-in"
-          data-aos-offset="200"
-          data-aos-duration="1000"
-          data-aos-mirror="true"
-          data-aos-once="false"
-          data-aos-anchor-placement="right"
-          className="hero min-h-[80vh]"
-        >
-          <div className="hero-content flex-col gap-8  w-full ">
-            <h1 className="text-5xl font-bold   text-[#ff8234dc]">
-              Sign Up now!
-            </h1>
-            <div className="card backdrop-blur-3xl  w-1/2 bg-transparent pt-3">
-              <div className="card-body">
-                <form onSubmit={handleSubmit}>
-                  <div className="flex gap-4">
-                    <div className="form-control w-full">
-                      <label className="label">
-                        <span className="label-text text-white">Name</span>
-                      </label>
-                      <input
-                        type="text"
-                        name="name"
-                        placeholder="your name"
-                        className="input bg-transparent text-white border border-[#ff823485]"
-                        required
-                      />
-                    </div>
-                    <div className="form-control w-full">
-                      <label className="label">
-                        <span className="label-text text-white">Photo url</span>
-                      </label>
-                      <input
-                        type="text"
-                        name="photoUrl"
-                        placeholder="photo url"
-                        className="input bg-transparent text-white border border-[#ff823485]"
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="form-control w-full">
-                      <label className="label">
-                        <span className="label-text text-white">Email</span>
-                      </label>
-                      <input
-                        type="emil"
-                        name="email"
-                        placeholder="email"
-                        className="input bg-transparent text-white border border-[#ff823485]"
-                        required
-                      />
-                    </div>
-                    <div className="form-control w-full">
-                      <label className="label">
-                        <span className="label-text text-white">Password</span>
-                      </label>
-                      <div className="form-control relative">
-                        <input
-                          type={showP ? "text" : "password"}
-                          name="password"
-                          placeholder="password"
-                          className="input bg-transparent text-white border border-[#ff823485]"
-                          required
-                        />
-                        <div className="my-1 text-red-400 font-medium">
-                          {error && <p>{error}</p>}
-                        </div>
-                        <span
-                          className="absolute top-4 right-2"
-                          onClick={handleShowP}
-                        >
-                          {showP ? <GoEye /> : <GoEyeClosed />}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <label className="flex justify-center my-2 w-full">
-                    <a
-                      href="#"
-                      className="label-text-alt  text-gray-300 link link-hover"
-                    >
-                      Forgot password?
-                    </a>
-                  </label>
-                  <div className="form-control mt-6">
-                    <button className="btn  hover:bg-[#ff8234bd] bg-[#ff8234bd] border-none bg-opacity-80 font-semibold text-white">
-                      Sign Up
-                    </button>
-                  </div>
-                </form>
-                <div>
-                  <p className="my-4  text-gray-300">
-                    Do not have a account ? please :{" "}
-                    <Link to={"/signIn"} className=" font-bold text-[#ff8234]">
-                      Sign In
-                    </Link>
-                  </p>
-                </div>
-                <button
-                  onClick={handleGoogleSignin}
-                  className="btn border  hover:border-[#ff823485] border-[#ff823485] z-50 hover:bg-transparent w-full mx-auto bg-transparent text-gray-300 font-semibold mb-3"
-                >
-                  <FcGoogle></FcGoogle>
-                  Sign Up With Google
-                </button>
+    <div className="h-screen my-auto w-screen mx-auto">
+     <div className="flex justify-center items-center h-full">
+     <div className="card backdrop-blur-3xl  w-1/3 bg-transparent pt-3">
+        <div className="card-body">
+          <form onSubmit={handleSubmit}>
+            <div className="flex gap-4">
+              <div className="form-control w-full">
+                <label className="label">
+                  <span className="label-text text-white">Name</span>
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="your name"
+                  className="input rounded-sm bg-transparent text-white border border-black focus:ring-0 focus:outline-none focus:border-main"
+                  required
+                />
+              </div>
+              <div className="form-control w-full">
+                <label className="label">
+                  <span className="label-text text-white">Photo url</span>
+                </label>
+                <input
+                  type="text"
+                  name="photoUrl"
+                  placeholder="photo url"
+                  className="input rounded-sm  bg-transparent text-white border border-black focus:ring-0 focus:outline-none focus:border-main"
+                  required
+                />
               </div>
             </div>
+            <div className="flex gap-4">
+              <div className="form-control w-full">
+                <label className="label">
+                  <span className="label-text text-white">Email</span>
+                </label>
+                <input
+                  type="emil"
+                  name="email"
+                  placeholder="email"
+                  className="input rounded-sm  bg-transparent text-white border border-black focus:ring-0 focus:outline-none focus:border-main"
+                  required
+                />
+              </div>
+              <div className="form-control w-full">
+                <label className="label">
+                  <span className="label-text text-white">Password</span>
+                </label>
+                <div className="form-control relative">
+                  <input
+                    type={showP ? "text" : "password"}
+                    name="password"
+                    placeholder="password"
+                    className="input rounded-sm bg-transparent text-white border border-black focus:ring-0 focus:outline-none focus:border-main"
+                    required
+                  />
+                  <div className="my-1 text-red-400 font-medium">
+                    {error && <p>{error}</p>}
+                  </div>
+                  <span
+                    className="absolute top-4 right-2"
+                    onClick={handleShowP}
+                  >
+                    {showP ? <GoEye /> : <GoEyeClosed />}
+                  </span>
+                </div>
+              </div>
+            </div>
+            <label className="flex justify-center my-2 w-full">
+              <a
+                href="#"
+                className="label-text-alt  text-gray-300 link link-hover"
+              >
+                Forgot password?
+              </a>
+            </label>
+            <div className="form-control mt-6">
+              <button className="btn  hover:bg-[#ff8234bd] bg-[#ff8234bd] border-none bg-opacity-80 font-semibold text-white">
+                Sign Up
+              </button>
+            </div>
+          </form>
+          <div>
+            <p className="my-4  text-gray-300">
+              Do not have a account ? please :{" "}
+              <Link to={"/signIn"} className=" font-bold text-main">
+                Sign In
+              </Link>
+            </p>
           </div>
+          <button
+            onClick={handleGoogleSignin}
+            className=""
+          >
+            <span className="flex justify-center items-center gap-6 text-xl"><FcGoogle></FcGoogle>Sign Up With Google</span>
+          </button>
         </div>
       </div>
-      <Toaster />
+     </div>
     </div>
   );
 };

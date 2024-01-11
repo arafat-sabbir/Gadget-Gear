@@ -7,7 +7,11 @@ export default {
 
 
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        'main':"#ff8234"
+      }
+    },
   },
   plugins: [require("daisyui")],
   darkMode: 'class',

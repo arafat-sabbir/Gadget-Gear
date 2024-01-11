@@ -1,9 +1,3 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 
 
@@ -31,7 +25,6 @@ import "aos/dist/aos.css";
  * 
  */
 const Banner = () => {
-  AOS.init();
   return (
     <div className="">
     </div>

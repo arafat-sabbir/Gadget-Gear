@@ -52,16 +52,7 @@ const SignIn = () => {
   return (
     <>
       <div className="">
-        <Navbar></Navbar>
-        <div
-          data-aos="zoom-in"
-          data-aos-offset="200"
-          data-aos-duration="1000"
-          data-aos-mirror="true"
-          data-aos-once="false"
-          data-aos-anchor-placement="right"
-          className="hero min-h-[80vh]"
-        >
+        <div className="hero min-h-[100vh] my-auto">
           <div className="hero-content flex-col gap-8">
             <h1 className="text-5xl font-bold text-[#FF8234]">Sign In now!</h1>
             <div className="card  w-96   pt-3 backdrop-blur-3xl bg-transparent">

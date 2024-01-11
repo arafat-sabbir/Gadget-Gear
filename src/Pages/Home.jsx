@@ -10,13 +10,11 @@ import WhyUs from "../Components/WhyUS/Whyus";
 const Home = () => {
     return (
         <div>
-            <Navbar></Navbar>
             <Banner></Banner>
             <Brand></Brand>
             <NewArrival></NewArrival>
             <WhyUs></WhyUs>
             <Support></Support>
-            <Footer></Footer>
         </div>
     );
 };
