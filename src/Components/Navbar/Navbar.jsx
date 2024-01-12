@@ -22,16 +22,16 @@ const Navbar = () => {
       <li>
         <NavLink to={"/"}>Home</NavLink>
       </li>
-      {
-        userInfo?.userRole=="admin" &&<li>
-        <NavLink to={"/addProduct"}>Add Product</NavLink>
-      </li>
-      }
-     {
-      userInfo?.userRole=="user" && <li>
-      <NavLink to={"/myCart"}>My Cart</NavLink>
-    </li>
-     }
+      {userInfo?.userRole == "admin" && (
+        <li>
+          <NavLink to={"/addProduct"}>Add Product</NavLink>
+        </li>
+      )}
+      {userInfo?.userRole == "user" && (
+        <li>
+          <NavLink to={"/myCart"}>My Cart</NavLink>
+        </li>
+      )}
     </>
   );
   return (
@@ -76,22 +76,42 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        {user && <p className="font-semibold  mr-2 ">{user.displayName}</p>}
-        {user && (
-          <img
-            className="w-12 mr-4 h-12  rounded-full border-2 border-[#f7897d]"
-            src={user?.photoURL ? user.photoURL : ""}
-            alt=""
-          />
-        )}
-        {user ? (
-          <button
-            className="btn hover:bg-main bg-main border-none rounded-full text-white"
-            onClick={handleSignOut}
-          >
-            Sign Out
-          </button>
-        ) : (
+        <div className="dropdown dropdown-bottom dropdown-end z-50 ">
+          <label tabIndex={0} className="">
+            {user && (
+              <img
+                className="w-12 mr-4 h-12  rounded-full border-2 border-main  "
+                src={user?.photoURL}
+                alt=""
+              />
+            )}
+          </label>
+          {user && (
+            <ul className="p-2 shadow menu dropdown-content  z-[1]  rounded-box w-56">
+              <img
+                className=" w-12 mx-auto  rounded-full mb-2 mt-2 border-2 border-main"
+                src={user?.photoURL}
+                alt=""
+              />
+              <p className="font-semibold text-center mr-2 mb-2 text-main ">
+                {user?.displayName}
+              </p>
+              <p className="font-semibold text-center mr-2 mb-2  text-main ">
+                {user?.email}
+              </p>
+              <div className="pb-2 mx-auto">
+                <button
+                  className="btn hover:bg-main bg-main border-none rounded-full text-white"
+                  onClick={handleSignOut}
+                >
+                  Sign Out
+                </button>
+              </div>
+            </ul>
+          )}
+        </div>
+
+        {!user && (
           <Link
             to={"/signIn "}
             className="btn rounded-full hover:bg-[#ff8234e8] bg-[#ff8234f3] border-none  w-24  text-white"

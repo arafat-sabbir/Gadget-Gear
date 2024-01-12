@@ -1,12 +1,13 @@
 import { useLoaderData } from "react-router-dom";
 import Product from "../Product/Product";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import swal from "sweetalert";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "aos/dist/aos.css";
 import { Pagination } from "swiper/modules";
+import axios from "axios";
 
 const Brandproduct = () => {
   const loadedproducts = useLoaderData();
@@ -20,20 +21,25 @@ const Brandproduct = () => {
     });
 
     if (willDelete) {
-      fetch(`https://gadgetgear-server.vercel.app/items/${_id}`, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
+      axios.delete(`https://gadgetgear-server.vercel.app/items/${_id}`)
         .then((data) => {
-          if (data.deletedCount > 0) {
+          if (data.data.deletedCount > 0) {
             swal("Deleted!", "Your Product has been deleted!", "success");
-
             const newOne = products.filter((coffee) => coffee._id !== _id);
             setProduct(newOne);
           }
         });
     }
   };
+
+  useEffect(()=>{
+    window.scrollTo(
+      {
+        top:0,
+        behavior:"smooth"
+      }
+    )
+  },[])
   return (
     <div>
       <div className="container mx-auto">
@@ -119,7 +125,7 @@ const Brandproduct = () => {
               ></Product>
             ))
           ) : (
-            // If no product available show this 
+            // If no product available show this
             <div>
               <img
                 src="https://i.ibb.co/gTSPFgD/icons8-unavailable-500.png"

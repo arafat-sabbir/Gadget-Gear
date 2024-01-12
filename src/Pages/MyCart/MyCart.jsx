@@ -4,16 +4,20 @@ import swal from "sweetalert";
 import { useEffect, useState } from "react";
 
 import useAuth from "../../Utility/Hooks/UseAuth/useAuth";
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
+import toast from "react-hot-toast";
 
 const MyCart = () => {
   const { user } = useAuth()
   const userEmail = user.email;
-  useEffect(() => {
-    fetch(`https://gadgetgear-server.vercel.app/cart/${userEmail}`)
-      .then((res) => res.json())
-      .then((data) => setProduct(data));
-  }, [userEmail]);
-  const [cartdata, setProduct] = useState([]);
+  const {data:cartdata,isLoading,isPending,refetch}= useQuery({
+    queryKey:["product"],
+    queryFn:async()=>{
+      const res = await axios.get(`https://gadgetgear-server.vercel.app/cart/${userEmail}`)
+      return res.data;
+    }
+  })
   const handleDelete = async (_id) => {
     const willDelete = await swal({
       title: "Are you sure?",
@@ -22,28 +26,28 @@ const MyCart = () => {
       dangerMode: true,
     });
     if (willDelete) {
-      fetch(`https://gadgetgear-server.vercel.app/cart/${_id}`, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
+      axios.delete(`https://gadgetgear-server.vercel.app/cart/${_id}`)
         .then((data) => {
-          if (data.deletedCount > 0) {
-            swal("Deleted!", "Your Product has been deleted!", "success");
-
-            const newOne = cartdata.filter((coffee) => coffee._id !== _id);
-            setProduct(newOne);
+          if (data.data.deletedCount > 0) {
+           toast.success("Your Product has been deleted!")
+            refetch()
           }
         });
     }
   };
+  if(isLoading||isPending){
+    return <div>Loading...</div>
+  }
+  const totalPrice = cartdata.reduce((item,total)=>item+total.price,0)
   return (
     <div className="min-h-[calc(100vh-319px)]">
       <div className="container mx-auto">
-        <h3 className="flex gap-2 text-3xl font-semibold justify-center text-[#f8863e] mt-8">
-          ToTal Product On <BsCart2></BsCart2> : {cartdata.length}
+        <h3 className="flex gap-2 text-3xl font-semibold justify-left text-center ml-4 text-main mt-8">
+          Total Product : {cartdata?.length}
         </h3>
-        <div className="grid grid-cols-1 p-4 xl:grid-cols-2  gap-12 py-20  ">
-          {cartdata.map((data) => (
+        <h3 className="text-3xl font-semibold justify-left ml-4 text-main mt-8">Total Price : {totalPrice} </h3>
+        <div className="grid grid-cols-1 p-4 xl:grid-cols-2  gap-12 py-20">
+          {cartdata?.map((data) => (
             <CartProduct
               data={data}
               key={data.id}

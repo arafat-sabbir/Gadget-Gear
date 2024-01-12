@@ -6,7 +6,7 @@ import { AiOutlineDelete } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 const CartProduct = ({ data, handleDelete }) => {
-  const { image, name, brandName, price, rating, type, productId } = data;
+  const { image, name, brandName, price, rating, type, productId,_id } = data;
   return (
     <div>
       <div className="card md:card-side rounded-lg bg-base-100 border-2 hover:border-r-main transition duration-300  w-[90vw] lg:w-auto  md:w-[90vw] mx-auto">
