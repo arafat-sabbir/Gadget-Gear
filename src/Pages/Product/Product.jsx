@@ -12,7 +12,7 @@ const Product = ({ product, handleDelete }) => {
 
   return (
     <div>
-      <div className="card md:card-side rounded-lg bg-base-100 border-2 hover:border-r-[#FF8234]  w-[90vw] lg:w-auto  md:w-[90vw] mx-auto">
+      <div className="card md:card-side rounded-lg bg-base-100 border-2 hover:border-r-main  w-[90vw] lg:w-auto  md:w-[90vw] mx-auto">
         <figure>
           <img
             src={image}
@@ -30,7 +30,7 @@ const Product = ({ product, handleDelete }) => {
           </p>
           <p className="font-medium">Type : {type}</p>
           <h3 className=" font-semibold">
-            Price : <span className="text-[#FC815C]">${price}.00</span>
+            Price : <span className="text-main">${price}.00</span>
           </h3>
           <h3 className="my-2">
             {" "}

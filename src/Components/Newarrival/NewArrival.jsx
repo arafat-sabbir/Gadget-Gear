@@ -1,13 +1,37 @@
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 
 const NewArrival = () => {
+  const animate1 = useRef(null);
+  const isInView1 = useInView(animate1);
+  const animate2 = useRef(null);
+  const isInView2 = useInView(animate2);
+  const animate3 = useRef(null);
+  const isInView3 = useInView(animate3);
+  const animate4 = useRef(null);
+  const isInView4 = useInView(animate4);
+  
   return (
-    <div className="container mx-auto mb-28 p-4">
-      <h3 className="md:text-5xl text-4xl  tracking-widest my-20 font-semibold text-center  text-[#ff8234]">
+    <div  className="container mx-auto mb-28 p-4">
+      <h3 ref={animate4} style={{
+      opacity: isInView4? 1 : 0,
+      transform: isInView4? "translateY(0px)" : "translateX(-300px)",
+      transition: "all 1.5s ease-in-out",
+
+    }} className="text-3xl lg:ml-9  tracking-widest my-20 text-center lg:text-left font-semibold   text-main">
         Newly Arrived
       </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-4 gap-6 lg:gap-20">
-        <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
+      <div className="grid grid-cols-1  lg:grid-cols-3 md:gap-20 gap-10 lg:gap-20">
+        <div
+          ref={animate1}
+          style={{
+            transform: isInView1 ? "none" : "translateX(-200px)",
+            opacity: isInView1 ? 1 : 0,
+            transition: "all 1.5s ease-in-out",
+          }}
+          className="flex flex-col items-center justify-center w-full max-w-sm mx-auto"
+        >
           <div
             className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
             style={{
@@ -33,7 +57,15 @@ const NewArrival = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
+        <div
+          ref={animate2}
+          style={{
+            transform: isInView2 ? "none" : "translateY(200px)",
+            opacity: isInView2 ? 1 : 0,
+            transition: "all 1.5s ease-in-out",
+          }}
+          className="flex flex-col items-center justify-center w-full max-w-sm mx-auto"
+        >
           <div
             className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
             style={{
@@ -59,7 +91,15 @@ const NewArrival = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
+        <div
+          ref={animate3}
+          style={{
+            transform: isInView3 ? "none" : "translateX(200px)",
+            opacity: isInView3 ? 1 : 0,
+            transition: "all 1.5s ease-in-out",
+          }}
+          className="flex flex-col items-center justify-center w-full max-w-sm mx-auto"
+        >
           <div
             className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
             style={{

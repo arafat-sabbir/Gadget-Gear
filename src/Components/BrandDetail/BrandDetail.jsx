@@ -7,7 +7,7 @@ const BrandDetail = ({ brand }) => {
   return (
     <>
       <Link to={`/product/${brandname}`}>
-        <div className="card w-[400px] h-[300px]  rounded-md hover:shadow-[0_0_70px_] transition duration-300  ease-in-out">
+        <div className="card w-[400px] h-[300px] hover:shadow-main  rounded-md hover:shadow-[0_0_70px_] transition duration-300  ease-in-out">
           <figure>
             <img
               className="hover:border-[#FF8234] p-10 pt-20"

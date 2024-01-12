@@ -8,7 +8,7 @@ import { IoHomeOutline } from "react-icons/io5";
 import GoogleSignIn from "../../Utility/GoogleSignIn/GoogleSignIn";
 
 const SignIn = () => {
-  const { signWithGoogle, user, signInUser } = useAuth()
+  const { signWithGoogle, user, signInUser } = useAuth();
   const [showP, setShowp] = useState(false);
   const [error, setError] = useState(null);
   const location = useLocation();
@@ -19,7 +19,7 @@ const SignIn = () => {
     const email = form.get("email");
     const password = form.get("password");
     e.target.reset();
-// Sign Up With Email and Password Get the function from authProvider
+    // Sign Up With Email and Password Get the function from authProvider
     signInUser(email, password)
       .then((result) => {
         console.log(result);
@@ -38,7 +38,7 @@ const SignIn = () => {
   const handleShowP = () => {
     setShowp(!showP);
   };
-  // Handle Google Sign In 
+  // Handle Google Sign In
   // const handleGoogleSignin = () => {
   //   signWithGoogle()
   //     .then(() => {
@@ -55,7 +55,16 @@ const SignIn = () => {
           <h1 className="text-5xl font-semibold leading-3 tracking-widest">
             Welcome Back
           </h1>
-          <Link to={'/'} className="text-xl font-semibold absolute  left-72 top-10"> <span className="flex  gap-2 hover:text-main duration-300 transition-all justify-center items-center">  <IoHomeOutline size={26}/> Go Home</span> </Link>
+          <Link
+            to={"/"}
+            className="text-xl font-semibold absolute  left-72 top-10"
+          >
+            {" "}
+            <span className="flex  gap-2 hover:text-main duration-300 transition-all justify-center items-center">
+              {" "}
+              <IoHomeOutline size={26} /> Go Home
+            </span>{" "}
+          </Link>
           <div className="card  w-1/3   pt-3  bg-transparent">
             <div className="card-body">
               <form onSubmit={handleSignIn}>
@@ -103,8 +112,8 @@ const SignIn = () => {
               <div className="my-1 text-red-400 font-medium">
                 {error && <p>Error : {error}</p>}
                 <p className="my-4 text-black">
-                  Do not have a account ? {" "}
-                  <Link to={"/signUp"} className=" font-bold text-[#FF8234]">
+                  Do not have a account ?{" "}
+                  <Link to={"/signUp"} className=" font-bold text-main">
                     Sign Up
                   </Link>
                 </p>

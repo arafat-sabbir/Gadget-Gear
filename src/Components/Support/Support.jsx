@@ -1,18 +1,33 @@
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 const Support = () => {
-  AOS.init();
+  const animate1 = useRef(null);
+  const isInView1 = useInView(animate1);
+
   return (
     <div className="container mx-auto my-20 p-4">
-      <h3 className="lg:text-4xl md:text-xl leading-7  font-semibold text-center dark:text-red-500">
-        WELCOME TO GADGETGLADE SUPPORT. WE'RE HERE TO HELP.
+      <h3 ref={animate1}
+        style={{
+          opacity: isInView1 ? 1 : 0,
+          transform: isInView1 ? "none":"translateX(-200px)",
+          transition: "all 1.5s ease-in-out",
+        }} className="text-4xl  leading-7  font-semibold text-center lg:text-left lg:ml-[170px]">
+        Need Any Assistance
       </h3>
-      <h3 className="md:text-2xl font-semibold text-center my-4 text-gray-500 mb-12">
-        ALWAYS ON YOUR SIDE WHEN YOU NEED HELP
+      <h3
+        ref={animate1}
+        style={{
+          opacity: isInView1 ? 1 : 0,
+          transform: isInView1 ? "none":"translateX(-200px)",
+          transition: "all 1.5s ease-in-out",
+        }}
+        className="leading-7  font-semibold text-center lg:text-left lg:ml-[170px] md:text-2xl  my-4 text-gray-500 mb-12"
+      >
+        We Are Always Your Side When You Need
       </h3>
       <div className="lg:flex lg:gap-40 justify-center">
-        <div className="flex lg:w-4/12 mb-4 bg-[#d1ecfd9d] px-10 lg:mb-0 h-[300px] hover:shadow-[0_0_70px_]   rounded-sm duration-300">
+        <div className="flex lg:w-4/12 mb-4 bg-[#d1ecfd9d] px-10 lg:mb-0 h-[300px] shadow-main hover:shadow-main hover:shadow-[20px_60px_50px_] shadow-xl  rounded-sm duration-300">
           <div className="flex items-center gap-4">
             <img
               src="https://i.ibb.co/DMVbtbz/phone-icn.png"
@@ -27,7 +42,7 @@ const Support = () => {
             </div>
           </div>
         </div>
-        <div className="flex bg-[#DFE7FD] lg:w-4/12 h-[300px] px-10 hover:shadow-[0_0_70px_]   rounded-sm duration-300 ">
+        <div className="flex shadow-xl shadow-main hover:shadow-main bg-[#DFE7FD] lg:w-4/12 h-[300px] px-10 hover:shadow-[20px_60px_50px_]   rounded-sm duration-300 ">
           <div className="flex items-center gap-4">
             <img
               src="https://i.ibb.co/0ccvVwz/chat-icn.png"

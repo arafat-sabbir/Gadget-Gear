@@ -28,10 +28,11 @@ const AddProduct = () => {
     };
     console.log(ProductInfo);
     // add to backend
-    axios.post("/https://gadgetgear-server.vercel.app/product",ProductInfo)
+    axios
+      .post("/https://gadgetgear-server.vercel.app/product", ProductInfo)
       .then((data) => {
         if (data.data.acknowledged) {
-          toast.success("Product Added Successfully")
+          toast.success("Product Added Successfully");
         }
       });
   };
@@ -41,7 +42,9 @@ const AddProduct = () => {
       <div className="hero min-h-[calc(100vh-309px)]   ">
         <div className="hero-content flex-col  w-full">
           <div className="text-center">
-            <h1 className=" text-[#FF8234] text-5xl font-bold tracking-widest mt-6 lg:mt-0">ADD Product!</h1>
+            <h1 className=" text-main text-5xl font-bold tracking-widest mt-6 lg:mt-0">
+              ADD Product!
+            </h1>
           </div>
           <div className="card flex-shrink-0 w-full -2xl bg-transparent backdrop-blur-lg rounded-lg ">
             <form onSubmit={handleAddProduct} className="card-body">

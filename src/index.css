@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap');
 
 *{
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bai Jamjuree', sans-serif;
   letter-spacing: 0.025em !important;
   scroll-behavior: smooth !important;
   box-sizing: border-box I !important;
@@ -11,7 +11,7 @@
   scale: 110% !important;
   transition: all;
   transition-duration: 0.5s;
-  color: #ff8234!important;
+  color: #1C61E7!important;
   font-weight: 700 !important;
 }
 ul > li :hover{
@@ -19,7 +19,7 @@ ul > li :hover{
   scale: 110%;
   transition: color,scale;
   transition-duration: 300ms !important;
-  color: #ff8234 !important;
+  color: #1C61E7 !important;
   font-weight: 700 !important;
   border-radius: 50px !important;
 }
