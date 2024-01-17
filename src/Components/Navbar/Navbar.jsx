@@ -56,7 +56,7 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content font-semibold mx-2 mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content font-semibold mx-2 mt-3 p-2 shadow z-[50] rounded-box w-52"
           >
             {links}
           </ul>
@@ -87,7 +87,7 @@ const Navbar = () => {
             )}
           </label>
           {user && (
-            <ul className="p-2 shadow menu dropdown-content  z-[1]  rounded-box w-56">
+            <ul className="p-2 shadow menu dropdown-content bg-white   z-[50]  rounded-box w-56">
               <img
                 className=" w-12 mx-auto  rounded-full mb-2 mt-2 border-2 border-main"
                 src={user?.photoURL}
@@ -114,7 +114,7 @@ const Navbar = () => {
         {!user && (
           <Link
             to={"/signIn "}
-            className="btn rounded-full hover:bg-[#ff8234e8] bg-[#ff8234f3] border-none  w-24  text-white"
+            className=" hover:bg-main bg-main border-none px-6 py-3 font-semibold hover:scale-95  duration-300 transition-all rounded-sm text-white"
           >
             Login
           </Link>
